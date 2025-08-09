@@ -214,13 +214,17 @@ export default function Hero() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <div className="space-y-4">
+            <BlurFade className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Want club news and updates?
+                Want <span className="text-blue-700">club</span> news and
+                updates?
               </h2>
-              <p className="text-xl md:text-2xl">Sign up for our newsletter.</p>
-            </div>
-            <div className="w-full max-w-md space-y-4">
+              <p className="text-xl md:text-2xl">
+                Sign up for our{" "}
+                <span className="text-blue-700">newsletter</span>.
+              </p>
+            </BlurFade>
+            <BlurFade className="w-full max-w-md space-y-4">
               <form className="flex flex-col sm:flex-row gap-2">
                 <Input
                   type="email"
@@ -229,7 +233,7 @@ export default function Hero() {
                 />
                 <Button
                   type="submit"
-                  className="bg-black text-white hover:bg-gray-800"
+                  className="bg-blue-700 hover:bg-blue-800 ml-2 text-white"
                 >
                   Subscribe
                 </Button>
@@ -241,7 +245,7 @@ export default function Hero() {
                 </Link>
                 .
               </p>
-            </div>
+            </BlurFade>
           </div>
         </div>
       </section>
