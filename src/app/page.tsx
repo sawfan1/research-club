@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 
 import Image from "next/image";
+import TransitionLink from "@/components/TransitionLink";
 
 const buggle = Cabin({ subsets: ["latin"] });
 
@@ -66,9 +67,11 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex items-center space-x-4">
-              <Button className="bg-blue-700 hover:bg-blue-800">
-                Get Started
-              </Button>
+              <TransitionLink href="/signup">
+                <Button className="bg-blue-700 hover:bg-blue-800">
+                  Get Started
+                </Button>
+              </TransitionLink>
               <button className="cursor-pointer ml-2 text-gray-700 hover:text-blue-600 font-medium flex items-center space-x-2 group transition-colors duration-200">
                 <span>Learn More</span>
                 <svg
