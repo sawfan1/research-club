@@ -8,6 +8,8 @@ import { Award, Microscope, Telescope, Trophy, Users } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 
+import Image from "next/image";
+
 const buggle = Cabin({ subsets: ["latin"] });
 
 export default function Hero() {
@@ -88,13 +90,18 @@ export default function Hero() {
 
           {/* Right Side - Image */}
           <div className="relative hidden lg:block">
-            <div className="relative bg-gray-100 rounded-2xl shadow-xl border border-gray-200 overflow-hidden aspect-[4/3]">
-              <img
+            <div className="bg-gray-200 relative rounded-2xl shadow-xl border border-gray-200 overflow-hidden aspect-[4/3]">
+              <Image
                 src="/abstract1.jpg"
                 alt="Research Club Image"
-                className="w-full h-full object-cover shadow-sm"
+                fill // Makes the image fill the parent element [^1][^2]
+                sizes="100vw" // Important for optimizing srcset when using 'fill' [^1]
+                style={{ objectFit: "cover" }} // Controls how the image fits within its container [^1]
+                className="shadow-sm z-10" // Applies the shadow from your original image tag
               />
               {/* Overlay for better contrast */}
+              <div className="absolute top-0 left-0 w-full h-[100%] bg-gray-200 animate-pulse"></div>
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
 
