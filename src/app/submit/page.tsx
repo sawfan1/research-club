@@ -22,8 +22,8 @@ export default function Submit() {
 
   return (
     <div className="w-full min-h-screen">
-      <section className="w-full h-50 p-10">
-        <h1 className="text-3xl font-semibold text-center">
+      <section className="w-full p-10 relative overflow-hidden h-screen">
+        <h1 className="text-3xl font-semibold text-center ">
           Submit your paper
         </h1>
         <div className="grid w-full max-w-sm items-center gap-1.5 mt-6 mx-auto">

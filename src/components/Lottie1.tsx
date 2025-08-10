@@ -2,6 +2,7 @@
 
 import animationData from "./Chemistry Lab.json";
 import { useLottie } from "lottie-react";
+import { BlurFade } from "./magicui/blur-fade";
 
 const Lotti1 = () => {
   const defaultOptions = {
@@ -12,9 +13,9 @@ const Lotti1 = () => {
   const { View } = useLottie(defaultOptions);
 
   return (
-    <div className="w-128 absolute top-[100px] right-[70%] hidden md:block">
+    <BlurFade className="w-128 absolute top-[100px] right-[70%] hidden md:block">
       {View}
-    </div>
+    </BlurFade>
   );
 };
 

@@ -10,6 +10,10 @@
   filter: blur(20px);
 }
 
+.pugz {
+  overflow-x: hidden;
+}
+
 body {
   transition-property: opacity, background, transform, filter;
   transition-timing-function: ease-in-out;
@@ -56,16 +60,16 @@ body {
   --radius-xl: calc(var(--radius) + 4px);
   --animate-meteor: meteor 5s linear infinite;
   @keyframes meteor {
-  0% {
-    transform: rotate(var(--angle)) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
     }
   }
 }
