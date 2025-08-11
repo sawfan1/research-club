@@ -5,7 +5,7 @@ export default function Showcase() {
   return (
     <section className="w-full min-h-screen mx-auto bg-gradient-to-b from-blue-100 to-white">
       <div className="shadow-md w-full h-20 md:h-30 bg-blue-700 flex flex-col items-center justify-center space-y-4">
-        <TextAnimate className="text-2xl md:text-3xl font-bold tracking-tighter text-white text-center">
+        <TextAnimate className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-white text-center">
           Research Showcase
         </TextAnimate>
       </div>

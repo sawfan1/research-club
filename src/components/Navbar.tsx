@@ -44,15 +44,7 @@ const navigationLinks = [
       },
     ],
   },
-  {
-    label: "About",
-    submenu: true,
-    type: "icon",
-    items: [
-      { href: "#", label: "Club Vision", icon: "BookOpenIcon" },
-      { href: "#", label: "Founders", icon: "InfoIcon" },
-    ],
-  },
+  { href: "/about", label: "About Us" },
   { href: "/faq", label: "View FAQs" },
   { href: "/events", label: "Events" },
 ];
