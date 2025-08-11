@@ -22,7 +22,7 @@ export default function Showcase() {
         ></PaperCard>
         <PaperCard
           title="Machine Learning Approaches for Climate Change Prediction"
-          author="Elena Rodriguez"
+          author="Martha Rodriguez"
           description="This research presents novel machine learning algorithms for predicting climate patterns and extreme weather events. The study combines satellite data with ground-based measurements to improve forecast accuracy and explores the potential for early warning systems in vulnerable regions."
           datePublished="July 15, 2025"
           tags={[
