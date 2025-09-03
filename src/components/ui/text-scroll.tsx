@@ -110,9 +110,6 @@ export const TextScroll: React.FC<TextScrollProps> = ({
       <ParallaxText baseVelocity={default_velocity} className={className}>
         {text}
       </ParallaxText>
-      <ParallaxText baseVelocity={-default_velocity} className={className}>
-        {text}
-      </ParallaxText>
     </section>
   );
 };

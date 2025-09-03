@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Syne } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/v3/Navbar";
+// import Navbar from "@/components/Navbar";
+import Footer from "@/components/v3/Footer";
 
-const geist = Geist({
+const f = Geist({
   subsets: ["latin"],
 });
 
@@ -20,8 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.className} antialiased`}>
+      <body className={`${f.className} antialiased`}>
         <Navbar />
+
         {children}
         <Footer />
       </body>

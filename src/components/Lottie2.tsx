@@ -13,7 +13,7 @@ const Lotti2 = () => {
   const { View } = useLottie(defaultOptions);
 
   return (
-    <BlurFade className="w-128 absolute top-[100px] left-[70%] hidden md:block">
+    <BlurFade className="h-full flex items-center justify-center w-1/2">
       {View}
     </BlurFade>
   );

@@ -3,7 +3,174 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.transitioning {
+html {
+  scroll-behavior: smooth;
+}
+
+.flood:hover {
+  color: whitesmoke;
+}
+
+@keyframes float-subtle {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.dashed-bg {
+  background: radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #a4a4a4 75px,
+      #a4a4a4 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #a4a4a4 76px,
+      #a4a4a4 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #fff;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.flood:before {
+  content: "";
+  position: absolute;
+  background: #383736;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 0;
+  -webkit-transition: top 0.09s ease-in;
+  transition: top 0.09s ease-in;
+  border-radius: 0;
+}
+
+.barbed {
+  background: linear-gradient(
+    19deg,
+    #bcbcbc 25%,
+    transparent 26%,
+    transparent 74%,
+    #bcbcbc 75%
+  );
+  background-size: 4em 4em;
+  background-color: #1f1f1f;
+  opacity: 1;
+  background-attachment: fixed;
+}
+
+.flood:hover:before {
+  top: 0;
+}
+
+.bord {
+  background: linear-gradient(45deg, #4f46e4 10%, transparent 10%),
+    linear-gradient(135deg, transparent 90%, #4f46e4 90%);
+  background-size: 1em 1em;
+  background-color: #ffffff;
+  opacity: 0.7;
+}
+
+.wireframe {
+  background-color: #ffffff;
+  opacity: 1;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #ffffff 20%,
+      #ffffff 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #ffffff 20%,
+        #ffffff 80%,
+        transparent 80%,
+        transparent
+      )
+      15px 15px,
+    linear-gradient(
+        #0b0816 1.2000000000000002px,
+        transparent 1.2000000000000002px
+      )
+      0 -0.6000000000000001px,
+    linear-gradient(
+        90deg,
+        #0b0816 1.2000000000000002px,
+        #ffffff 1.2000000000000002px
+      ) -0.6000000000000001px 0;
+  background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
+}
+
+.boxes {
+  --u: 5px;
+  --c1: #ededee;
+  --c2: #000000;
+  --c3: #1e1e1e;
+  --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+  background: conic-gradient(
+        from 122deg at 50% 85.15%,
+        var(--c2) 0 58deg,
+        var(--c3) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 58deg at 66.87% 50%,
+        var(--c1) 0 64deg,
+        var(--c2) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%)
+      var(--gp),
+    conic-gradient(
+        from 172deg at 33.13% 50%,
+        var(--c3) 0 66deg,
+        var(--c1) 0 130deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%)
+      var(--gp),
+    conic-gradient(
+        from -58deg at 50.25% 14.85%,
+        var(--c3) 0 58deg,
+        var(--c2) 0 116deg,
+        #fff0 0 100%
+      )
+      var(--gp),
+    conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%)
+      var(--gp),
+    linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
+}
+
+/* .transitioning {
   opacity: 0;
   background: white;
   transform: translateY(40px);
@@ -12,13 +179,13 @@
 
 .pugz {
   overflow-x: hidden;
-}
+} */
 
-body {
+/* body {
   transition-property: opacity, background, transform, filter;
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
-}
+} */
 
 @theme inline {
   --color-background: var(--background);
@@ -59,6 +226,7 @@ body {
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-meteor: meteor 5s linear infinite;
+  --animate-grid: grid 15s linear infinite;
   @keyframes meteor {
     0% {
       transform: rotate(var(--angle)) translateX(0);
@@ -70,6 +238,15 @@ body {
     100% {
       transform: rotate(var(--angle)) translateX(-500px);
       opacity: 0;
+    }
+  }
+
+  @keyframes grid {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 }

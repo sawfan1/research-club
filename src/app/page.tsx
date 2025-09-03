@@ -1,227 +1,496 @@
-import { BlurFade } from "@/components/magicui/blur-fade";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import { Button } from "@/components/ui/button";
-import { TextScroll } from "@/components/ui/text-scroll";
-import Vento from "@/components/Vento";
-import { Cabin } from "next/font/google";
-import { Award, Microscope, Telescope, Trophy, Users } from "lucide-react";
-import Link from "next/link";
-import { Input } from "@/components/ui/input";
-
+import { WordRotate } from "@/components/v3/WordRotate";
+import localFont from "next/font/local";
+import {
+  Readex_Pro,
+  Montserrat,
+  Anonymous_Pro,
+  Plus_Jakarta_Sans,
+} from "next/font/google";
+import { AnimatedGridPattern } from "@/components/v3/Griddler";
+import { cn } from "@/lib/utils";
+import { Highlighter } from "@/components/v3/Highlighter";
+import Microscope from "@/components/v3/3D1";
+import {
+  BookOpenCheck,
+  Calendar,
+  Hand,
+  Instagram,
+  Mail,
+  MapPin,
+  MonitorX,
+  PencilLine,
+  Phone,
+  SearchCheck,
+} from "lucide-react";
+import { SparklesText } from "@/components/v3/SparklesText";
+import BackToTopButton from "@/components/v3/BackToTop";
+import Issue from "@/components/v3/Issue";
+import { DotPattern } from "@/components/v3/Dot";
 import Image from "next/image";
-import TransitionLink from "@/components/TransitionLink";
+import { TextScroll } from "@/components/ui/text-scroll";
+import { Hower } from "@/components/v3/Hower";
+import Lotti1 from "@/components/Lottie1";
+import Lotti2 from "@/components/Lottie2";
+import { WorkshopCard } from "@/components/v3/WCard";
+import FAQ01 from "@/components/v3/FAQ";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
 
-const buggle = Cabin({ subsets: ["latin"] });
+const piu = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+});
 
-export default function Hero() {
+const readex_pro = Readex_Pro({
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
+});
+
+const anon = Anonymous_Pro({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+});
+
+const reckless = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Reckless.ttf",
+      style: "normal",
+    },
+  ],
+});
+
+export default function Landing() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      <div className="absolute top-20 left-10 w-8 h-8 bg-blue-200/40 rounded-full animate-pulse"></div>
-      <div className="absolute top-40 right-20 w-6 h-6 bg-purple-200/40 rounded-full animate-bounce delay-300"></div>
-      <div className="absolute bottom-40 left-20 w-4 h-4 bg-indigo-200/40 rounded-full animate-ping delay-700"></div>
+    <main>
+      <BackToTopButton />
+      <section className="bg-[radial-gradient(circle_at_center,white_20%,transparent)] border-1 border-b-black h-screen relative flex flex-col justify-center items-center overflow-hidden">
+        <AnimatedGridPattern
+          numSquares={25}
+          maxOpacity={0.4}
+          duration={0.9}
+          repeatDelay={2.4}
+          color="black"
+          className={cn("inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-[-1]")}
+        />
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-8">
-            {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-gray-100 rounded-full px-4 py-2 border border-gray-200">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-gray-800 text-sm font-medium">
-                What's new
-              </span>
-              <span className="text-gray-600 text-sm">
-                Featuring submissions
-              </span>
-              <svg
-                className="w-4 h-4 text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+        <div
+          className={`rounded-[30px] mb-2 ${readex_pro.className} bg-black text-white h-[30px] w-[240px] flex items-center justify-center text-[12px]`}
+        >
+          Now accepting submissions
+        </div>
+        <h1
+          className={`text-center text-[50px] md:text-[60px] ${reckless.className} leading-[1.1]`}
+        >
+          Sunnydale <br /> Research Club
+        </h1>
+        <div
+          className={`text-[16px] mt-2 ${readex_pro.className} flex items-center`}
+          suppressHydrationWarning
+        >
+          <div className="mr-1">Incubating curiousity, harboring </div>{" "}
+          <WordRotate
+            duration={1500}
+            words={["excellence", "dedication", "innovation"]}
+          />
+        </div>
+        <div className="mt-[20px] gap-[10px] flex items-center">
+          <button
+            className={`${readex_pro.className} border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px]`}
+          >
+            Subscribe
+          </button>
+          <button
+            className={`${readex_pro.className} cursor-pointer bg-white p-4 text-black rounded-[10px] w-[148px] border-black border-1`}
+          >
+            Learn More
+          </button>
+        </div>
+      </section>
+      <section
+        className="relative flex min-h-screen border-1 bg-white border-b-black"
+        id="about"
+      >
+        <div className="min-h-screen w-full p-8 flex flex-col items-center xl:block">
+          <h1 className={`text-[50px] ${reckless.className}`}>
+            <Highlighter action="highlight" color="#fff7bd">
+              About Us
+            </Highlighter>
+          </h1>
+          <div className="mt-[20px]">
+            <h2
+              className={`${readex_pro.className} font-black max-w-[60ch] text-[20px]`}
+            >
+              <Highlighter action="underline" color="#87CEFA">
+                ABSTRACT
+              </Highlighter>
+            </h2>
+            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+              Members explore scientific topics, conduct experiments, and share
+              discoveries, fostering a supportive environment for learning and
+              personal growth.
+            </p>
+            <h2
+              className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
+            >
+              <Highlighter action="underline" color="#87CEFA">
+                ASPIRATIONS
+              </Highlighter>
+            </h2>
+            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+              To encourage members to present and publish their findings and to
+              build a supportive community that nurtures future innovators and
+              leaders in science.
+            </p>
+            <h2
+              className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
+            >
+              <Highlighter action="underline" color="#87CEFA">
+                EVENTS
+              </Highlighter>
+            </h2>
+            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+              We host a wide variety of events including weekly seminars,
+              hands-on workshops, guest lectures from scientists, collaborative
+              research projects, and science fairs to showcase member
+              achievements.
+            </p>
+            <h2
+              className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
+            >
+              <Highlighter action="underline" color="#87CEFA">
+                SPECIALITY
+              </Highlighter>
+            </h2>
+            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+              Our club is the first of its kind in South Asia, paving the way
+              forward for future generations to bask in the light of research.
+            </p>
+          </div>
+        </div>
+        <div className="h-screen w-full p-8 hidden xl:block">
+          <div className="relative h-full w-full  rounded-3xl cursor-grab bg-center bg-fixed bg-[url('/matrix.png')] outline-1 outline-black">
+            <Hand className="absolute text-black inset-[20px]" size={30} />
+            <Microscope />
+          </div>
+        </div>
+      </section>
+      <section
+        className="relative border-1 min-h-screen border-b-black w-full flex flex-col items-center"
+        id="issues"
+      >
+        <Image
+          src={"/boostract.png"}
+          width={300}
+          height={200}
+          alt=""
+          className="absolute left-[-80px] top-[-70px] z-[-1]"
+          style={{ animation: "float-subtle 3s ease-in-out infinite" }}
+        />
+        <DotPattern className="z-[-2]" />
+        <h1 className={`text-[50px] ${reckless.className} mt-4`}>
+          <SparklesText className="font-light">Issues</SparklesText>
+        </h1>
+        <p className={`${readex_pro.className} mt-[6px] text-[14px]`}>
+          Issues are rolled out every{" "}
+          <Highlighter action="underline" color="#2832eb">
+            month
+          </Highlighter>
+          , usually the first Sunday. Don't miss out!
+        </p>
+        <div className="mt-6 flex gap-[20px]">
+          <Issue
+            date="September, 2025"
+            title="HYPERBOLIC TIME DILATION"
+            numberOfAuthors={95}
+            numberOfPapers={65}
+            backgroundImageUrl="/issues/space.png"
+            paddle="#FFD4C2"
+          />
+          <Issue
+            date="October, 2025"
+            title="BIOGENETICS & CRISPR7"
+            numberOfAuthors={141}
+            numberOfPapers={78}
+            backgroundImageUrl="/issues/dna.png"
+            paddle="#D3FFDC"
+          />
+          <Issue
+            date="November, 2025"
+            title="PARTICLE DUALITY"
+            numberOfAuthors={95}
+            numberOfPapers={65}
+            backgroundImageUrl="/issues/code.png"
+            paddle="#C2E1FF"
+          />
+        </div>
+        <Hower>See All Past Issues</Hower>
+      </section>
+      <section
+        className="relative flex min-h-screen border-1 bg-[#A2D8FF] border-b-black p-[20px]"
+        id="peer"
+      >
+        <div className="outline-black outline-1 rounded-[20px] bg-white w-full flex overflow-x-hidden">
+          <div className="w-full flex flex-col border-r border-black items-center">
+            <Image
+              src="/checker.png"
+              width={447}
+              height={225}
+              alt=""
+              className="mt-[40px]"
+            />
+            <div className="w-full pl-[80px] h-full">
+              <h2
+                className={`text-[50px] ${reckless.className} flex items-center gap-3`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </div>
-
-            {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Sunnydale
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-yellow-600">
-                  Research Club
+                <PencilLine size={40} className="translate-y-1" />
+                Peer Review
+              </h2>
+              <p
+                className={`text-[22px] ${readex_pro.className} antialiased font-regular leading-10`}
+              >
+                We offer one (1x){" "}
+                <span className="mx-1 bg-[#AAB9FF] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
+                  FREE
                 </span>
-              </h1>
+                <span className="mx-1 bg-[#FFE0C5] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
+                  STANDARD
+                </span>
+                <span className="mx-1 bg-[#5EFFDA] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
+                  20 PAGE
+                </span>
+                <br></br>peer review devoid of charge.
+              </p>
 
-              <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
-                Our club is dedicated to research, learning, and sharing
-                knowledge on a wide range of topics, from science to technology,
-                and beyond.
+              <button
+                className={`${readex_pro.className} mt-8 border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px]`}
+              >
+                Avail Now!
+              </button>
+              <p className={`${anon.className} mt-4`}>
+                <u>Terms and conditions</u> apply, of course!
               </p>
             </div>
+          </div>
+          <div className="w-full flex flex-col items-center justify-center p-8 gap-[25px] dashed-bg">
+            <div className="outline-1 outline-black bg-white rounded-[20px] p-8 w-full">
+              <h3
+                className={`text-[35px] ${reckless.className} mb-4 text-center`}
+              >
+                Review Process
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#A2D8FF] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                    1
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Submit your research paper
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#ffd7a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                    2
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Expert reviewers assess quality, format and citations
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#ffa5a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                    3
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Receive detailed feedback, suggestions and corrections
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex items-center space-x-4">
-              <TransitionLink href="/signup">
-                <Button className="bg-blue-700 hover:bg-blue-800">
-                  Get Started
-                </Button>
-              </TransitionLink>
-              <button className="cursor-pointer ml-2 text-gray-700 hover:text-blue-600 font-medium flex items-center space-x-2 group transition-colors duration-200">
-                <span>Learn More</span>
-                <svg
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+            <div className="outline-1 bg-white outline-black rounded-[20px] p-8 w-full relative overflow-hidden">
+              <Image
+                src={"/anchorr.png"}
+                width={250}
+                height={240}
+                alt=""
+                className="absolute right-[-55px] top-[-150px] z-1"
+              />
+              <h3
+                className={`text-[35px] ${reckless.className} mb-4 text-center z-2`}
+              >
+                Benefits
+              </h3>
+              <div className="space-y-4 z-2">
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                  >
+                    I
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Papers checked within 7-10 days
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                  >
+                    II
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Assess your skills and get a competitive edge
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                  >
+                    III
+                  </div>
+                  <span className={`${readex_pro.className} text-[16px] ml-2`}>
+                    Avoid mistakes before publication
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <TextScroll
+        text="  EVENTS  "
+        className={`${readex_pro.className} text-[70px] font-bold border-b border-black`}
+      />
+      <section
+        id="events"
+        className="relative border-1 border-b-black w-full barbed"
+      >
+        <div className="w-full flex items-center justify-around p-8">
+          <div className="w-[450px] h-[450px] bg-black flex flex-col items-center justify-baseline p-1">
+            <div className="w-full h-5/10 bg-gray-200 "></div>
+            <div className="w-full p-4">
+              <h2
+                className={`text-[24px] ${readex_pro.className} text-white tracking-[1%]`}
+              >
+                SUNNYDALE RESEARCH FEST
+              </h2>
+              <div
+                className={`w-full text-white relative ${readex_pro.className}`}
+              >
+                <p className="inline-flex items-center gap-2 mt-1">
+                  <Calendar className="inline" size={18} /> 15th September 2025{" "}
+                  <br />
+                </p>
+                <p className="my-1">
+                  Sunnydale Bashundhara Campus, 9:00AM to 6:00PM
+                </p>
+                <p className="absolute right-2 top-1">Offline</p>
+              </div>
+            </div>
+            <div className="flex gap-2 justify-baseline items-end w-full px-4 mt-8">
+              <button
+                className={`cursor-pointer w-[150px] h-[46px] bg-[#D9D9D9] ${readex_pro.className}`}
+              >
+                More Details
+              </button>
+              <button
+                className={`cursor-pointer w-[150px] h-[46px] bg-[#AAB9FF] ${readex_pro.className}`}
+              >
+                Share
               </button>
             </div>
           </div>
-
-          {/* Right Side - Image */}
-          <div className="relative hidden lg:block">
-            <div className="bg-gray-200 relative rounded-2xl shadow-xl border border-gray-200 overflow-hidden aspect-[4/3]">
-              <Image
-                src="/abstract1.jpg"
-                alt="Research Club Image"
-                fill // Makes the image fill the parent element [^1][^2]
-                sizes="100vw" // Important for optimizing srcset when using 'fill' [^1]
-                style={{ objectFit: "cover" }} // Controls how the image fits within its container [^1]
-                className="shadow-sm z-10" // Applies the shadow from your original image tag
-              />
-              {/* Overlay for better contrast */}
-              <div className="absolute top-0 left-0 w-full h-[100%] bg-gray-200 animate-pulse"></div>
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-
-            {/* Glow Effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-3xl blur-2xl -z-10"></div>
-          </div>
         </div>
-      </div>
-      <TextScroll
-        className="font-display font-semibold text-center text-2xl tracking-tighter  text-black dark:text-white md:text-5xl md:leading-[5rem]"
-        text="Sunnydale Research Club is now accepting submissions for the upcoming research conference. Join us in exploring the latest advancements in science and technology!"
-        default_velocity={1}
-      />
-
-      <Vento />
-      <section className="w-full p-10">
-        <BlurFade className="w-full h-[500px] bg-amber-300 rounded-2xl p-8 flex items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
-            {/* Image Column */}
-            <div className="flex items-center justify-center">
-              <Microscope size={164} />
-            </div>
-
-            {/* Text Column */}
-            <div className="flex items-center justify-center md:justify-start">
-              <div className="text-center md:text-left">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                  Get your papers published and find accreditation!
-                </h1>
-              </div>
-            </div>
-          </div>
-        </BlurFade>
       </section>
       <section
-        className={`w-full bg-blue-800 py-24 px-8 md:py-32 ${buggle.className}`}
+        id="submission"
+        className="relative flex min-h-screen border-1 border-b-black"
       >
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-18 items-center px-20">
-            {/* Left side - Visual */}
-            <div className="flex flex-col items-center justify-center">
-              <div className="relative">
-                <div className="rounded-full p-16 backdrop-blur-sm">
-                  <Telescope className="h-36 w-36 text-white" />
-                </div>
-                <div className="absolute -top-6 -right-6 bg-yellow-400 rounded-full p-4">
-                  <Award className="h-8 w-8 text-blue-800" />
-                </div>
-                <div className="absolute -bottom-6 -left-6 bg-green-400 rounded-full p-4">
-                  <Trophy className="h-8 w-8 text-blue-800" />
-                </div>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-white mt-12 text-center">
-                Why Join?
-              </h2>
+        <Lotti1 />
+        <div className="min-h-screen w-1/2 flex flex-col items-center justify-center relative overflow-hidden">
+          <Image
+            src={"/plane.png"}
+            width={400}
+            alt=""
+            height={260}
+            style={{ animation: "float-subtle 3s ease-in-out infinite" }}
+            className="absolute  bottom-[-50px] right-[-50px]"
+          />
+          <h1 className={`text-[50px] ${reckless.className} mt-4`}>
+            Submission
+          </h1>
+          <p
+            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px]`}
+          >
+            Head down the following link and complete the form. After
+            completion, check your email for further instructions.
+          </p>
+
+          <div className="flex h-[150px] w-100 bg-blue0-50 mt-4 rounded-xl overflow-hidden outline-1 outline-black">
+            <div
+              className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
+            >
+              <BookOpenCheck size={30} />
+              Read the guidelines
             </div>
-
-            {/* Right side - Content */}
-            <div className="space-y-16">
-              <div className="flex items-start space-x-6">
-                <div className="flex-shrink-0">
-                  <Users className="h-10 w-10 text-blue-200" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
-                    Like-Minded Community
-                  </h3>
-
-                  <TextAnimate
-                    animation="blurIn"
-                    className="text-blue-100 text-lg leading-relaxed text-left"
-                  >
-                    Get to surround yourself with a hive of like minded friends
-                    in a world of research.
-                  </TextAnimate>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-6">
-                <div className="flex-shrink-0">
-                  <Award className="h-10 w-10 text-blue-200" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
-                    Expert Mentorship
-                  </h3>
-                  <TextAnimate
-                    animation="blurIn"
-                    className="text-blue-100 text-lg leading-relaxed text-left"
-                  >
-                    Get mentorship from experienced experts in their respective
-                    fields.
-                  </TextAnimate>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-6">
-                <div className="flex-shrink-0">
-                  <Trophy className="h-10 w-10 text-blue-200" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
-                    Competition Opportunities
-                  </h3>
-                  <TextAnimate className="text-blue-100 text-lg leading-relaxed">
-                    Get elected for external olympiads and research
-                    competitions.
-                  </TextAnimate>
-                </div>
-              </div>
-
-              {/* The button div has been removed from here */}
+            <div
+              className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
+            >
+              <SearchCheck size={30} />
+              Verify information
+            </div>
+            <div
+              className={`${readex_pro.className} text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
+            >
+              <MonitorX size={30} />
+              Maintain honesty
             </div>
           </div>
+          <Hower>Proceed to Submission</Hower>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black">
+      <section id="workshops" className="relative flex border-1 border-b-black">
+        <div className="w-1/2 flex flex-col items-center justify-center">
+          <h1 className={`text-[50px] ${reckless.className} mt-4`}>
+            <p
+              className={`bg-blue-600 text-white px-4 py-2 rounded-xl text-sm text-center ${readex_pro.className}`}
+            >
+              Latest addition
+            </p>
+            <Highlighter color="black" action="underline">
+              Workshops
+            </Highlighter>
+          </h1>
+          <p
+            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-3`}
+          >
+            Workshops are held monthly, usually offline and on school campus.
+            They help you discover your passion for research topics as well as
+            hone your skills.
+          </p>
+
+          <p
+            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-6`}
+          >
+            Expert mentors hold classes on topics ranging from research
+            integrity, formatting and referencing in 1 hour subclasses for the
+            convenience of students.
+          </p>
+        </div>
+        <Lotti2 />
+      </section>
+      <section className="relative min-h-100 border-1 border-b-black p-8 flex flex-col">
+        <h2 className={`${piu.className} text-[30px] font-black tracking-wide`}>
+          RUNNING NOW
+        </h2>
+        <div className="min-h-70 flex mt-4 gap-6"></div>
+      </section>
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <BlurFade className="space-y-4">
@@ -229,7 +498,7 @@ export default function Hero() {
                 Want <span className="text-blue-700">club</span> news and
                 updates?
               </h2>
-              <p className="text-xl md:text-2xl">
+              <p className={`text-xl md:text-2xl ${readex_pro.className}`}>
                 Sign up for our{" "}
                 <span className="text-blue-700">newsletter</span>.
               </p>
@@ -249,16 +518,95 @@ export default function Hero() {
                 </Button>
               </form>
               <p className="text-sm text-gray-600">
-                We care about your data. Read our{" "}
-                <Link href="#" className="underline hover:text-gray-800">
-                  privacy policy
-                </Link>
-                .
+                We care about your data. Read our <u>privacy policy</u>.
               </p>
             </BlurFade>
           </div>
         </div>
       </section>
-    </div>
+      <section className="bg-[#1e1e1e] text-white relative flex justify-center items-center min-h-screen border-1 border-b-black">
+        <FAQ01 />
+      </section>
+
+      <section
+        className={`bg-background p-8 py-12 border-1 border-b-black ${readex_pro.className} boxes`}
+      >
+        <div className="max-w-6xl mx-auto">
+          <h1
+            className={`mx-auto text-[50px] max-w-lg text-center bg-white outline-1 outline-black mb-6 text-balance ${reckless.className}`}
+          >
+            Contact Us
+          </h1>
+
+          <div className="flex justify-center">
+            <div className="grid grid-cols-2 gap-4 max-w-lg">
+              <Card className="p-6 hover:shadow-lg transition-shadow outline-black outline-1 rounded-none">
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+                      Email
+                    </h3>
+                    <p className="text-foreground font-medium">
+                      sdresearchclub@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-lg transition-shadow outline-black outline-1 rounded-none">
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Instagram className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+                      Instagram
+                    </h3>
+                    <p className="text-foreground font-medium">
+                      @sdresearchclub
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-lg transition-shadow outline-black outline-1 rounded-none">
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+                      Phone
+                    </h3>
+                    <p className="text-foreground font-medium">
+                      +1 (555) 123-4567
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 hover:shadow-lg transition-shadow outline-black outline-1 rounded-none">
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <MapPin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+                      Address
+                    </h3>
+                    <p className="text-foreground font-medium text-sm">
+                      Sunnydale Bashundhara, Dhaka
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
