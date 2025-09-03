@@ -6,8 +6,8 @@ import { useRef, useEffect } from "react";
 
 function GLBModel({ url }: { url: string }) {
   const { scene } = useGLTF(url);
-  const solidMeshRef = useRef<any>();
-  const wireframeMeshRef = useRef<any>();
+  const solidMeshRef = useRef<any>(null);
+  const wireframeMeshRef = useRef<any>(null);
 
   const solidScene = scene.clone();
   const wireframeScene = scene.clone();
