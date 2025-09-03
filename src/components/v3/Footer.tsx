@@ -4,7 +4,9 @@ const red_hat = Red_Hat_Display({
   subsets: ["latin"],
 });
 
-const red = Readex_Pro();
+const red = Readex_Pro({
+  subsets: ["latin"],
+});
 
 export default function Footer() {
   return (

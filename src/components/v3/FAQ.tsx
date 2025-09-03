@@ -8,33 +8,36 @@ import { CircleQuestionMark } from "lucide-react";
 
 import { Readex_Pro } from "next/font/google";
 
-const inter = Readex_Pro();
+const inter = Readex_Pro({
+  subsets: ["latin"],
+});
 
 const faq = [
   {
-    question: "Question 1?",
+    question: "How long does the research paper have to be?",
     answer:
-      "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.",
+      "There are no limits on word, feel free to make it as long as you like. However, anything between 600 to 1200 words is advisable.",
   },
   {
-    question: "How do I track my order?",
+    question: "Is Sunnydale Research Club open to recruiting?",
     answer:
-      "Track your order using the link provided in your confirmation email, or log into your account to view tracking details.",
+      "No, recruitments are currently closed but keep an eye on our socials for further notice.",
   },
   {
-    question: "Do you ship internationally?",
+    question:
+      "Can students outside of Sunnydale submit papers or avail peer review?",
     answer:
-      "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.",
+      "No, unfortunately for the time being, we are only accepting submissions from within Sunnydale. The same goes for the peer review option.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "How long does it take for a paper to be reviewed?",
     answer:
-      "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.",
+      "Papers are usually checked and returned with 2 weeks. However, sometimes it might take longer if the intake volume is large so be patient as we will get back to you.",
   },
   {
-    question: "What if I receive a damaged item?",
+    question: "Do I have to pay for a second peer review?",
     answer:
-      "Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.",
+      "Although the first peer review is free, we do charge a small amount for additional papers.",
   },
 ];
 
