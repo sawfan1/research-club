@@ -45,7 +45,7 @@ export default function Landing() {
   return (
     <main>
       <BackToTopButton />
-      <section className="bg-[radial-gradient(circle_at_center,white_20%,transparent)] border-1 border-b-black h-screen relative flex flex-col justify-center items-center overflow-hidden">
+      <section className="bg-[radial-gradient(circle_at_center,white_20%,transparent)] border-1 border-b-black max-h-[800px] h-screen relative flex flex-col justify-center items-center overflow-hidden">
         <AnimatedGridPattern
           numSquares={25}
           maxOpacity={0.4}
@@ -89,7 +89,7 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="relative flex min-h-screen border-1 bg-white border-b-black"
+        className="relative flex min-h-screen border-1 bg-white border-b-black max-h-[800px]"
         id="about"
       >
         <div className="min-h-screen w-full p-8 flex flex-col items-center xl:block">
@@ -165,7 +165,7 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="relative border-1 min-h-screen border-b-black w-full flex flex-col items-center"
+        className="max-h-[800px] relative border-1 h-screen border-b-black w-full flex flex-col items-center"
         id="issues"
       >
         <Image
@@ -432,7 +432,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
-      <section className="bg-[#1e1e1e] text-white relative flex justify-center items-center min-h-screen border-1 border-b-black">
+      <section className="bg-[#1e1e1e] text-white relative flex justify-center items-center h-screen max-h-[800px] border-1 border-b-black">
         <FAQ01 />
       </section>
 
