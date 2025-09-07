@@ -31,40 +31,14 @@ import { TextScroll } from "@/components/ui/text-scroll";
 import { Hower } from "@/components/v3/Hower";
 import Lotti1 from "@/components/Lottie1";
 import Lotti2 from "@/components/Lottie2";
-import { WorkshopCard } from "@/components/v3/WCard";
 import FAQ01 from "@/components/v3/FAQ";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-
-const piu = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-});
-
-const readex_pro = Readex_Pro({
-  subsets: ["latin"],
-  weight: "400",
-  style: "normal",
-});
-
-const anon = Anonymous_Pro({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-});
-
-const reckless = localFont({
-  src: [
-    {
-      path: "../../public/fonts/Reckless.ttf",
-      style: "normal",
-    },
-  ],
-});
+import { anon, montserrat, piu, readex_pro, reckless } from "@/lib/ufl";
+import Submission from "@/components/v3/sections/Submission";
+import Workshops from "@/components/v3/sections/Workshops";
 
 export default function Landing() {
   return (
@@ -407,83 +381,8 @@ export default function Landing() {
           </div>
         </div>
       </section>
-      <section
-        id="submission"
-        className="relative flex min-h-screen border-1 border-b-black"
-      >
-        <Lotti1 />
-        <div className="min-h-screen w-1/2 flex flex-col items-center justify-center relative overflow-hidden">
-          <Image
-            src={"/plane.png"}
-            width={400}
-            alt=""
-            height={260}
-            style={{ animation: "float-subtle 3s ease-in-out infinite" }}
-            className="absolute  bottom-[-50px] right-[-50px]"
-          />
-          <h1 className={`text-[50px] ${reckless.className} mt-4`}>
-            Submission
-          </h1>
-          <p
-            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px]`}
-          >
-            Head down the following link and complete the form. After
-            completion, check your email for further instructions.
-          </p>
-
-          <div className="flex h-[150px] w-100 bg-blue0-50 mt-4 rounded-xl overflow-hidden outline-1 outline-black">
-            <div
-              className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
-            >
-              <BookOpenCheck size={30} />
-              Read the guidelines
-            </div>
-            <div
-              className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
-            >
-              <SearchCheck size={30} />
-              Verify information
-            </div>
-            <div
-              className={`${readex_pro.className} text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
-            >
-              <MonitorX size={30} />
-              Maintain honesty
-            </div>
-          </div>
-          <Hower>Proceed to Submission</Hower>
-        </div>
-      </section>
-      <section id="workshops" className="relative flex border-1 border-b-black">
-        <div className="w-1/2 flex flex-col items-center justify-center">
-          <h1 className={`text-[50px] ${reckless.className} mt-4`}>
-            <p
-              className={`bg-blue-600 text-white px-4 py-2 rounded-xl text-sm text-center ${readex_pro.className}`}
-            >
-              Latest addition
-            </p>
-            <Highlighter color="black" action="underline">
-              Workshops
-            </Highlighter>
-          </h1>
-          <p
-            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-3`}
-          >
-            Workshops are held monthly, usually offline and on school campus.
-            They help you discover your passion for research topics as well as
-            hone your skills.
-          </p>
-
-          <p
-            className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-6`}
-          >
-            Expert mentors hold classes on topics ranging from research
-            integrity, formatting and referencing in 1 hour subclasses for the
-            convenience of students.
-          </p>
-        </div>
-        <Lotti2 />
-      </section>
+      <Submission />
+      <Workshops />
       <section className="relative min-h-100 border-1 border-b-black p-8 flex flex-col">
         <h2 className={`${piu.className} text-[30px] font-black tracking-wide`}>
           RUNNING NOW

@@ -67,12 +67,12 @@ function GLBModel({ url }: { url: string }) {
         scale={0.3}
         position={[0, -4.5, 0]}
       />
-      <primitive
+      {/* <primitive
         ref={wireframeMeshRef}
         object={wireframeScene}
         scale={0.3}
         position={[0, -4.5, 0]}
-      />
+      /> */}
     </>
   );
 }
