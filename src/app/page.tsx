@@ -39,6 +39,7 @@ import { Card } from "@/components/ui/card";
 import { anon, montserrat, piu, readex_pro, reckless } from "@/lib/ufl";
 import Submission from "@/components/v3/sections/Submission";
 import Workshops from "@/components/v3/sections/Workshops";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Landing() {
   return (
@@ -105,11 +106,13 @@ export default function Landing() {
                 ABSTRACT
               </Highlighter>
             </h2>
-            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+            <TextAnimate
+              className={`${montserrat.className} max-w-[60ch] text-[16px]`}
+            >
               Members explore scientific topics, conduct experiments, and share
               discoveries, fostering a supportive environment for learning and
               personal growth.
-            </p>
+            </TextAnimate>
             <h2
               className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
             >
@@ -117,11 +120,13 @@ export default function Landing() {
                 ASPIRATIONS
               </Highlighter>
             </h2>
-            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+            <TextAnimate
+              className={`${montserrat.className} max-w-[60ch] text-[16px]`}
+            >
               To encourage members to present and publish their findings and to
               build a supportive community that nurtures future innovators and
               leaders in science.
-            </p>
+            </TextAnimate>
             <h2
               className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
             >
@@ -129,12 +134,14 @@ export default function Landing() {
                 EVENTS
               </Highlighter>
             </h2>
-            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+            <TextAnimate
+              className={`${montserrat.className} max-w-[60ch] text-[16px]`}
+            >
               We host a wide variety of events including weekly seminars,
               hands-on workshops, guest lectures from scientists, collaborative
               research projects, and science fairs to showcase member
               achievements.
-            </p>
+            </TextAnimate>
             <h2
               className={`${readex_pro.className} font-black max-w-[60ch] text-[20px] mt-[20px]`}
             >
@@ -142,10 +149,12 @@ export default function Landing() {
                 SPECIALITY
               </Highlighter>
             </h2>
-            <p className={`${montserrat.className} max-w-[60ch] text-[16px]`}>
+            <TextAnimate
+              className={`${montserrat.className} max-w-[60ch] text-[16px]`}
+            >
               Our club is the first of its kind in South Asia, paving the way
               forward for future generations to bask in the light of research.
-            </p>
+            </TextAnimate>
           </div>
         </div>
         <div className="h-screen w-full p-8 hidden xl:block">
