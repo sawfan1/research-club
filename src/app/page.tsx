@@ -89,7 +89,7 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="relative flex min-h-screen border-1 bg-white border-b-black max-h-[800px]"
+        className="relative flex max-h-[800px] h-screen border-1 bg-white border-b-black"
         id="about"
       >
         <div className="min-h-screen w-full p-8 flex flex-col items-center xl:block">
