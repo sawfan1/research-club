@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CircleQuestionMark } from "lucide-react";
-
+import { reckless } from "@/lib/ufl";
 import { Readex_Pro } from "next/font/google";
 
 const inter = Readex_Pro({
@@ -43,12 +43,12 @@ const faq = [
 
 const FAQ01 = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12 ">
+    <div className="flex items-center justify-center px-6 py-12 ">
       <div className="max-w-xl ">
         <h2
-          className={`${inter.className} text-4xl md:text-5xl !leading-[1.15] tracking-tight text-center `}
+          className={`${reckless.className} text-4xl md:text-5xl !leading-[1.15] tracking-tight text-center `}
         >
-          Frequently Asked Questions{" "}
+          Frequently Asked <br></br>Questions{" "}
           <CircleQuestionMark className="inline" size={36} />
         </h2>
 

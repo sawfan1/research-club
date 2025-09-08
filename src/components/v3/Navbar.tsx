@@ -1,11 +1,23 @@
 "use client";
 
 import { Red_Hat_Display } from "next/font/google";
-import { ChevronRight, User } from "lucide-react";
+import { ChevronRight, Menu, User, X } from "lucide-react";
 
 import localFont from "next/font/local";
 import { useState, useEffect } from "react";
 import Navutton from "./Navutton";
+
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const saans_tria = localFont({
   src: [
@@ -24,12 +36,23 @@ const saans_tria = localFont({
   ],
 });
 
+const navigationLinks = [
+  { href: "#about", label: "About Us" },
+  { href: "#issues", label: "Issues" },
+  { href: "#peer", label: "Peer Review" },
+  { href: "#events", label: "Events" },
+  { href: "#submission", label: "Submission" },
+  { href: "#workshops", label: "Workshops" },
+  { href: "#faculty", label: "Faculty" },
+];
+
 const red_hat = Red_Hat_Display({
   subsets: ["latin"],
 });
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true);
+  const [opi, setOpi] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -92,11 +115,38 @@ export default function Navbar() {
         <Navutton text="Workshops" href="#workshops" />
         <Navutton text="Faculty" href="#faculty" />
       </div>
-      <button
-        className={`flex text-[14px] px-4 font-semibold justify-center rounded-full items-center absolute right-[40px] cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white`}
-      >
-        Subscribe <ChevronRight className="inline" size={14} />
-      </button>
+      <div className="absolute right-[40px] flex items-center gap-2">
+        <Popover open={opi} onOpenChange={setOpi}>
+          <PopoverTrigger asChild>
+            <button className="h-[34px] px-3 rounded-lg hover:bg-gray-200 block lg:hidden">
+              <Menu size={18} className="text-black" />
+            </button>
+          </PopoverTrigger>
+          <PopoverContent align="center" className="w-36 p-1 z-[100]">
+            <NavigationMenu className="max-w-none *:w-full">
+              <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
+                {navigationLinks.map((link, index) => (
+                  <NavigationMenuItem key={index} className="w-full">
+                    <NavigationMenuLink
+                      href={link.href}
+                      className="py-1.5"
+                      onClick={() => setOpi(false)}
+                    >
+                      {link.label}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </PopoverContent>
+        </Popover>
+
+        <button
+          className={`flex text-[14px] px-4 font-semibold justify-center rounded-full items-center cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white`}
+        >
+          Subscribe <ChevronRight className="inline" size={14} />
+        </button>
+      </div>
     </nav>
   );
 }

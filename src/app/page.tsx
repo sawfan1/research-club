@@ -89,10 +89,10 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="relative flex max-h-[800px] h-screen border-1 bg-white border-b-black"
+        className="relative flex items-center min-h-[700px] border-1 bg-white border-b-black"
         id="about"
       >
-        <div className="min-h-screen w-full p-8 flex flex-col items-center xl:block">
+        <div className="w-full p-8 flex flex-col items-center justify-center xl:block">
           <h1 className={`text-[50px] ${reckless.className}`}>
             <Highlighter action="highlight" color="#fff7bd">
               About Us
@@ -165,7 +165,7 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="max-h-[800px] relative border-1 h-screen border-b-black w-full flex flex-col items-center"
+        className="min-h-[750px] relative border-1 border-b-black w-full flex flex-col items-center justify-center"
         id="issues"
       >
         <Image
@@ -180,7 +180,7 @@ export default function Landing() {
         <h1 className={`text-[50px] ${reckless.className} mt-4`}>
           <SparklesText className="font-light">Issues</SparklesText>
         </h1>
-        <p className={`${readex_pro.className} mt-[6px] text-[14px]`}>
+        <p className={`${readex_pro.className} mt-[6px] text-[14px] mx-[40px]`}>
           Issues are rolled out every{" "}
           <Highlighter action="underline" color="#2832eb">
             month
@@ -188,22 +188,27 @@ export default function Landing() {
           , usually the first Sunday. Don't miss out!
         </p>
         <div className="mt-6 flex gap-[20px]">
-          <Issue
-            date="September, 2025"
-            title="HYPERBOLIC TIME DILATION"
-            numberOfAuthors={95}
-            numberOfPapers={65}
-            backgroundImageUrl="/issues/space.png"
-            paddle="#FFD4C2"
-          />
-          <Issue
-            date="October, 2025"
-            title="BIOGENETICS & CRISPR7"
-            numberOfAuthors={141}
-            numberOfPapers={78}
-            backgroundImageUrl="/issues/dna.png"
-            paddle="#D3FFDC"
-          />
+          <div className="hidden lg:block">
+            <Issue
+              date="September, 2025"
+              title="HYPERBOLIC TIME DILATION"
+              numberOfAuthors={95}
+              numberOfPapers={65}
+              backgroundImageUrl="/issues/space.png"
+              paddle="#FFD4C2"
+            />
+          </div>
+          <div className="hidden md:block">
+            <Issue
+              date="October, 2025"
+              title="BIOGENETICS & CRISPR7"
+              numberOfAuthors={141}
+              numberOfPapers={78}
+              backgroundImageUrl="/issues/dna.png"
+              paddle="#D3FFDC"
+            />
+          </div>
+
           <Issue
             date="November, 2025"
             title="PARTICLE DUALITY"
@@ -216,11 +221,11 @@ export default function Landing() {
         <Hower>See All Past Issues</Hower>
       </section>
       <section
-        className="relative flex min-h-screen border-1 bg-[#A2D8FF] border-b-black p-[20px]"
+        className="relative flex min-h-[700px] border-1 bg-[#A2D8FF] border-b-black p-[20px]"
         id="peer"
       >
-        <div className="outline-black outline-1 rounded-[20px] bg-white w-full flex overflow-x-hidden">
-          <div className="w-full flex flex-col border-r border-black items-center">
+        <div className="outline-black outline-1 rounded-[20px] bg-white w-full flex flex-col overflow-x-hidden lg:flex-row">
+          <div className="w-full flex flex-col border-b lg:border-r border-black items-center pb-12 lg:pb-0">
             <Image
               src="/checker.png"
               width={447}
@@ -229,13 +234,13 @@ export default function Landing() {
               className="mt-[40px]"
             />
             <div className="w-full pl-[80px] h-full">
-              <h2
+              <BlurFade
                 className={`text-[50px] ${reckless.className} flex items-center gap-3`}
               >
                 <PencilLine size={40} className="translate-y-1" />
                 Peer Review
-              </h2>
-              <p
+              </BlurFade>
+              <BlurFade
                 className={`text-[22px] ${readex_pro.className} antialiased font-regular leading-10`}
               >
                 We offer one (1x){" "}
@@ -249,7 +254,7 @@ export default function Landing() {
                   20 PAGE
                 </span>
                 <br></br>peer review devoid of charge.
-              </p>
+              </BlurFade>
 
               <button
                 className={`${readex_pro.className} mt-8 border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px]`}
@@ -262,7 +267,7 @@ export default function Landing() {
             </div>
           </div>
           <div className="w-full flex flex-col items-center justify-center p-8 gap-[25px] dashed-bg">
-            <div className="outline-1 outline-black bg-white rounded-[20px] p-8 w-full">
+            <BlurFade className="outline-1 outline-black bg-white rounded-[20px] p-8 w-full">
               <h3
                 className={`text-[35px] ${reckless.className} mb-4 text-center`}
               >
@@ -294,9 +299,9 @@ export default function Landing() {
                   </span>
                 </div>
               </div>
-            </div>
+            </BlurFade>
 
-            <div className="outline-1 bg-white outline-black rounded-[20px] p-8 w-full relative overflow-hidden">
+            <BlurFade className="outline-1 bg-white outline-black rounded-[20px] p-8 w-full relative overflow-hidden">
               <Image
                 src={"/anchorr.png"}
                 width={250}
@@ -341,7 +346,7 @@ export default function Landing() {
                   </span>
                 </div>
               </div>
-            </div>
+            </BlurFade>
           </div>
         </div>
       </section>
@@ -401,7 +406,7 @@ export default function Landing() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-            <BlurFade className="space-y-4">
+            <BlurFade className={`space-y-4 ${reckless.className}`}>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Want <span className="text-blue-700">club</span> news and
                 updates?
@@ -432,7 +437,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
-      <section className="bg-[#1e1e1e] text-white relative flex justify-center items-center h-screen max-h-[800px] border-1 border-b-black">
+      <section className="bg-[#1e1e1e] text-white relative flex justify-center items-center min-h-[750px] border-1 border-b-black">
         <FAQ01 />
       </section>
 
