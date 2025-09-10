@@ -55,7 +55,7 @@ export default function Issue({
       </div>
       <div>
         <h2
-          className={`text-[36px] mt-[20px] leading-tight ${saans.className}`}
+          className={`text-[30px] md:text-[36px] mt-[20px] leading-tight ${saans.className}`}
         >
           {title.split(" ").map((word, index, array) => (
             <span key={index}>

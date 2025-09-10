@@ -61,12 +61,12 @@ export default function Landing() {
           Now accepting submissions
         </div>
         <h1
-          className={`text-center text-[50px] md:text-[60px] ${reckless.className} leading-[1.1]`}
+          className={`text-center text-[40px] md:text-[60px] ${reckless.className} leading-[1.1]`}
         >
           Sunnydale <br /> Research Club
         </h1>
         <div
-          className={`text-[16px] mt-2 ${readex_pro.className} flex items-center`}
+          className={`text-[14px] md:text-[16px] mt-2 ${readex_pro.className} flex items-center`}
           suppressHydrationWarning
         >
           <div className="mr-1">Incubating curiousity, harboring </div>{" "}
@@ -93,7 +93,7 @@ export default function Landing() {
         id="about"
       >
         <div className="w-full p-8 flex flex-col items-center justify-center xl:block">
-          <h1 className={`text-[50px] ${reckless.className}`}>
+          <h1 className={`text-[40px] md:text-[50px] ${reckless.className}`}>
             <Highlighter action="highlight" color="#fff7bd">
               About Us
             </Highlighter>
@@ -173,14 +173,16 @@ export default function Landing() {
           width={300}
           height={200}
           alt=""
-          className="absolute left-[-80px] top-[-70px] z-[-1]"
+          className="absolute left-[-140px] top-[-100px] md:left-[-80px] md:top-[-70px] z-[-1]"
           style={{ animation: "float-subtle 3s ease-in-out infinite" }}
         />
         <DotPattern className="z-[-2]" />
-        <h1 className={`text-[50px] ${reckless.className} mt-4`}>
+        <h1 className={`text-[40px] md:text-[50px] ${reckless.className} mt-4`}>
           <SparklesText className="font-light">Issues</SparklesText>
         </h1>
-        <p className={`${readex_pro.className} mt-[6px] text-[14px] mx-[40px]`}>
+        <p
+          className={`${readex_pro.className} mt-[6px] text-[14px] mx-[40px] text-center`}
+        >
           Issues are rolled out every{" "}
           <Highlighter action="underline" color="#2832eb">
             month

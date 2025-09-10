@@ -142,7 +142,7 @@ export default function Navbar() {
         </Popover>
 
         <button
-          className={`flex text-[14px] px-4 font-semibold justify-center rounded-full items-center cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white`}
+          className={`hidden md:flex text-[14px] px-4 font-semibold justify-center rounded-full items-center cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white`}
         >
           Subscribe <ChevronRight className="inline" size={14} />
         </button>
