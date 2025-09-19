@@ -27,7 +27,7 @@ export default function Faculty() {
 				Core Members
 			</h3>
 			<div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-6 ">
-				<div className="w-[300px] h-[367px] bg-amber-200 rounded-[12px] relative border-1 border-white glow overflow-hidden">
+				<div className="w-[300px] h-[367px] bg-gray-900 rounded-[12px] relative border-1 border-white glow overflow-hidden">
 					<Image
 						src={"/faculty/rayan.jpg"}
 						fill
@@ -47,7 +47,7 @@ export default function Faculty() {
 						</p>
 					</div>
 				</div>
-				<div className="w-[300px] h-[367px] bg-amber-200 rounded-[12px] relative border-1 border-white glow overflow-hidden">
+				<div className="w-[300px] h-[367px] bg-gray-900 rounded-[12px] relative border-1 border-white glow overflow-hidden">
 					<Image
 						src={"/faculty/ahnaf.jpg"}
 						fill
