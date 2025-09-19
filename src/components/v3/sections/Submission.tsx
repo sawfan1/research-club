@@ -1,4 +1,5 @@
-import Lotti1 from "@/components/Lottie1";
+// import Lotti1 from "@/components/Lottie1";
+import Image from "next/image";
 import { Hower } from "@/components/v3/Hower";
 import { readex_pro, reckless } from "@/lib/ufl";
 import { BookOpenCheck, SearchCheck, MonitorX } from "lucide-react";
@@ -12,7 +13,8 @@ export default function Submission() {
       id="submission"
     >
       <div className="w-full md:w-1/2 h-full hidden md:flex flex-col items-center justify-center p-15">
-        <Lotti1 />
+        {/*<Lotti1 />*/}
+        <Image src="/chaka/medals.png" height={473} width={507} alt="image" />
       </div>
       <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-center px-6">
         <TextAnimate

@@ -23,8 +23,6 @@ import Issue from "@/components/v3/Issue";
 import Image from "next/image";
 import { TextScroll } from "@/components/ui/text-scroll";
 import { Hower } from "@/components/v3/Hower";
-import Lotti1 from "@/components/Lottie1";
-import Lotti2 from "@/components/Lottie2";
 import FAQ01 from "@/components/v3/FAQ";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Button } from "@/components/ui/button";

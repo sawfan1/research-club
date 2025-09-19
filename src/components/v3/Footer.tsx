@@ -18,7 +18,7 @@ export default function Footer() {
             <h1 className={`${red_hat.className} font-black text-[18px]`}>
               SD RESEARCH CLUB
             </h1>
-            <h2 className={`${red.className} text-[10px]`}>
+            <h2 className={`${red.className} text-[10px] hidden md:block`}>
               Made with 🖤 by{" "}
               <Link
                 href={"https://www.instagram.com/sawfan00/"}
