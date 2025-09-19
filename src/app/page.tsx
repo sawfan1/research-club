@@ -359,7 +359,14 @@ export default function Landing() {
       >
         <div className="w-full flex items-center justify-around p-8">
           <div className="w-[450px] h-[450px] bg-black flex flex-col items-center justify-baseline p-1">
-            <div className="w-full h-5/10 bg-gray-200 "></div>
+            <div className="w-full h-5/10 bg-gray-200 relative">
+              <Image
+                src={"/matrix.jpg"}
+                fill
+                alt="event"
+                className="object-cover"
+              />
+            </div>
             <div className="w-full p-4">
               <h2
                 className={`text-[24px] ${readex_pro.className} text-white tracking-[1%]`}
