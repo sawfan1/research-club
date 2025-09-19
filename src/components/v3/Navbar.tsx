@@ -37,13 +37,13 @@ const saans_tria = localFont({
 });
 
 const navigationLinks = [
-  { href: "#about", label: "About Us" },
-  { href: "#issues", label: "Issues" },
-  { href: "#peer", label: "Peer Review" },
-  { href: "#events", label: "Events" },
-  { href: "#submission", label: "Submission" },
-  { href: "#workshops", label: "Workshops" },
-  { href: "#faculty", label: "Faculty" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#issues", label: "Issues" },
+  { href: "/#peer", label: "Peer Review" },
+  { href: "/#events", label: "Events" },
+  { href: "/#submission", label: "Submission" },
+  { href: "/#workshops", label: "Workshops" },
+  { href: "/faculty", label: "Faculty" },
 ];
 
 const red_hat = Red_Hat_Display({
@@ -107,18 +107,18 @@ export default function Navbar() {
       <div
         className={`gap-[5px] h-full items-center justify-center ${saans_tria.className} hidden xl:flex`}
       >
-        <Navutton text="About Us" href="#about" />
-        <Navutton text="Issues" href="#issues" />
-        <Navutton text="Peer Review" href="#peer" />
-        <Navutton text="Events" href="#events" />
-        <Navutton text="Submission" href="#submission" />
-        <Navutton text="Workshops" href="#workshops" />
-        <Navutton text="Faculty" href="#faculty" />
+        <Navutton text="About Us" href="/#about" />
+        <Navutton text="Issues" href="/#issues" />
+        <Navutton text="Peer Review" href="/#peer" />
+        <Navutton text="Events" href="/#events" />
+        <Navutton text="Submission" href="/#submission" />
+        <Navutton text="Workshops" href="/#workshops" />
+        <Navutton text="Faculty" href="/faculty" />
       </div>
       <div className="absolute right-[40px] flex items-center gap-2">
         <Popover open={opi} onOpenChange={setOpi}>
           <PopoverTrigger asChild>
-            <button className="h-[34px] px-3 rounded-lg hover:bg-gray-200 block lg:hidden">
+            <button className="h-[34px] px-3 rounded-lg hover:bg-gray-200 block xl:hidden">
               <Menu size={18} className="text-black" />
             </button>
           </PopoverTrigger>
@@ -142,7 +142,7 @@ export default function Navbar() {
         </Popover>
 
         <button
-          className={`hidden md:flex text-[14px] px-4 font-semibold justify-center rounded-full items-center cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white`}
+          className={`hidden md:flex text-[14px] px-4 font-semibold justify-center rounded-full items-center cursor-pointer ${saans_tria.className} bg-[#0800FF] h-[34px] text-white hover:bg-blue-800`}
         >
           Subscribe <ChevronRight className="inline" size={14} />
         </button>

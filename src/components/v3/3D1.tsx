@@ -2,78 +2,54 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
-import { useRef, useEffect } from "react";
+import { useRef, useMemo, useEffect } from "react";
+import * as THREE from "three";
 
-function GLBModel({ url }: { url: string }) {
+function updateMaterial(material: THREE.Material | THREE.Material[], wireframe: boolean) {
+  const apply = (mat: THREE.Material) => {
+    if ("wireframe" in mat) {
+      mat.wireframe = wireframe;
+      if (wireframe && "color" in mat) {
+        (mat as THREE.MeshStandardMaterial).color.setHex(0xffffff);
+        (mat as THREE.MeshStandardMaterial).emissive?.setHex(0x444444);
+        (mat as THREE.MeshStandardMaterial).transparent = false;
+        (mat as THREE.MeshStandardMaterial).opacity = 0.8;
+      }
+    }
+  };
+
+  if (Array.isArray(material)) material.forEach(apply);
+  else apply(material);
+}
+
+function GLBModel({ url, showWireframe = false }: { url: string; showWireframe?: boolean }) {
   const { scene } = useGLTF(url);
-  const solidMeshRef = useRef<any>(null);
-  const wireframeMeshRef = useRef<any>(null);
+  const modelRef = useRef<THREE.Object3D>(null);
 
-  const solidScene = scene.clone();
-  const wireframeScene = scene.clone();
+  // Clone scene once
+  const clonedScene = useMemo(() => scene.clone(), [scene]);
 
   useEffect(() => {
-    if (solidScene) {
-      solidScene.traverse((child: any) => {
-        if (child.isMesh && child.material) {
-          if (Array.isArray(child.material)) {
-            child.material.forEach((mat: any) => {
-              mat.wireframe = false;
-            });
-          } else {
-            child.material.wireframe = false;
-          }
-        }
-      });
-    }
-
-    if (wireframeScene) {
-      wireframeScene.traverse((child: any) => {
-        if (child.isMesh && child.material) {
-          if (Array.isArray(child.material)) {
-            child.material.forEach((mat: any) => {
-              mat.wireframe = true;
-              mat.color.setHex(0xffffff);
-              mat.emissive.setHex(0x444444);
-              mat.transparent = false;
-              mat.opacity = 0.8;
-            });
-          } else {
-            child.material.wireframe = true;
-            child.material.color.setHex(0xffffff);
-            child.material.emissive.setHex(0x444444);
-            child.material.transparent = false;
-            child.material.opacity = 0.8;
-          }
-        }
-      });
-    }
-  }, [solidScene, wireframeScene]);
+    clonedScene.traverse((child: any) => {
+      if (child.isMesh && child.material) {
+        updateMaterial(child.material, showWireframe);
+      }
+    });
+  }, [clonedScene, showWireframe]);
 
   useFrame(() => {
-    if (solidMeshRef.current) {
-      solidMeshRef.current.rotation.y += 0.005;
-    }
-    if (wireframeMeshRef.current) {
-      wireframeMeshRef.current.rotation.y += 0.005;
+    if (modelRef.current) {
+      modelRef.current.rotation.y += 0.005;
     }
   });
 
   return (
-    <>
-      <primitive
-        ref={solidMeshRef}
-        object={solidScene}
-        scale={0.3}
-        position={[0, -4.5, 0]}
-      />
-      {/* <primitive
-        ref={wireframeMeshRef}
-        object={wireframeScene}
-        scale={0.3}
-        position={[0, -4.5, 0]}
-      /> */}
-    </>
+    <primitive
+      ref={modelRef}
+      object={clonedScene}
+      scale={0.3}
+      position={[0, -4.5, 0]}
+    />
   );
 }
 
@@ -85,7 +61,7 @@ export default function Microscope() {
     >
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <GLBModel url="/better.glb" />
+      <GLBModel url="/better.glb" showWireframe={false} />
       <OrbitControls enableRotate enableZoom />
     </Canvas>
   );

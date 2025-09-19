@@ -1,3 +1,5 @@
+"use client";
+
 import { Inter, Plus_Jakarta_Sans, Readex_Pro } from "next/font/google";
 import localFont from "next/font/local";
 

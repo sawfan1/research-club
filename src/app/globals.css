@@ -11,6 +11,17 @@ html {
   color: whitesmoke;
 }
 
+.dotted-background {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.4) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px; /* Controls spacing between dots */
+  background-repeat: repeat; /* Ensures the pattern covers the element */
+  z-index: -2;
+}
+
 @keyframes float-subtle {
   0%,
   100% {
@@ -22,7 +33,8 @@ html {
 }
 
 .dashed-bg {
-  background: radial-gradient(black 3px, transparent 4px),
+  background:
+    radial-gradient(black 3px, transparent 4px),
     radial-gradient(black 3px, transparent 4px),
     linear-gradient(#fff 4px, transparent 0),
     linear-gradient(
@@ -44,8 +56,24 @@ html {
       transparent 109px
     ),
     #fff;
-  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
-  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  background-size:
+    109px 109px,
+    109px 109px,
+    100% 6px,
+    109px 109px,
+    109px 109px;
+  background-position:
+    54px 55px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px;
+}
+
+.glow {
+  -webkit-box-shadow: 0px 0px 72px 8px rgba(0, 136, 255, 0.27);
+  -moz-box-shadow: 0px 0px 72px 8px rgba(0, 136, 255, 0.27);
+  box-shadow: 0px 0px 72px 8px rgba(0, 136, 255, 0.27);
 }
 
 .flood:before {
@@ -81,7 +109,8 @@ html {
 }
 
 .bord {
-  background: linear-gradient(45deg, #4f46e4 10%, transparent 10%),
+  background:
+    linear-gradient(45deg, #4f46e4 10%, transparent 10%),
     linear-gradient(135deg, transparent 90%, #4f46e4 90%);
   background-size: 1em 1em;
   background-color: #ffffff;
@@ -91,7 +120,8 @@ html {
 .wireframe {
   background-color: #ffffff;
   opacity: 1;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle,
       transparent 20%,
       #ffffff 20%,
@@ -117,8 +147,13 @@ html {
         90deg,
         #0b0816 1.2000000000000002px,
         #ffffff 1.2000000000000002px
-      ) -0.6000000000000001px 0;
-  background-size: 30px 30px, 30px 30px, 15px 15px, 15px 15px;
+      ) -0.6000000000000001px
+      0;
+  background-size:
+    30px 30px,
+    30px 30px,
+    15px 15px,
+    15px 15px;
 }
 
 .boxes {
@@ -127,7 +162,8 @@ html {
   --c2: #000000;
   --c3: #1e1e1e;
   --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
-  background: conic-gradient(
+  background:
+    conic-gradient(
         from 122deg at 50% 85.15%,
         var(--c2) 0 58deg,
         var(--c3) 0 116deg,
@@ -227,6 +263,8 @@ html {
   --radius-xl: calc(var(--radius) + 4px);
   --animate-meteor: meteor 5s linear infinite;
   --animate-grid: grid 15s linear infinite;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes meteor {
     0% {
       transform: rotate(var(--angle)) translateX(0);
@@ -247,6 +285,23 @@ html {
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }

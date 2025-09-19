@@ -1,11 +1,5 @@
 import { WordRotate } from "@/components/v3/WordRotate";
 import localFont from "next/font/local";
-import {
-  Readex_Pro,
-  Montserrat,
-  Anonymous_Pro,
-  Plus_Jakarta_Sans,
-} from "next/font/google";
 import { AnimatedGridPattern } from "@/components/v3/Griddler";
 import { cn } from "@/lib/utils";
 import { Highlighter } from "@/components/v3/Highlighter";
@@ -25,7 +19,6 @@ import {
 import { SparklesText } from "@/components/v3/SparklesText";
 import BackToTopButton from "@/components/v3/BackToTop";
 import Issue from "@/components/v3/Issue";
-import { DotPattern } from "@/components/v3/Dot";
 import Image from "next/image";
 import { TextScroll } from "@/components/ui/text-scroll";
 import { Hower } from "@/components/v3/Hower";
@@ -77,7 +70,7 @@ export default function Landing() {
         </div>
         <div className="mt-[20px] gap-[10px] flex items-center">
           <button
-            className={`${readex_pro.className} border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px]`}
+            className={`${readex_pro.className} border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px] transition-all hover:bg-white hover:text-black`}
           >
             Subscribe
           </button>
@@ -89,7 +82,7 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="relative flex items-center min-h-[700px] border-1 bg-white border-b-black"
+        className="relative flex items-center min-h-[700px] border-1 bg-white border-b-black z-2"
         id="about"
       >
         <div className="w-full p-8 flex flex-col items-center justify-center xl:block">
@@ -165,8 +158,9 @@ export default function Landing() {
         </div>
       </section>
       <section
-        className="min-h-[750px] relative border-1 border-b-black w-full flex flex-col items-center justify-center"
+        className="overflow-hidden dotted-background min-h-[750px] relative border-1 border-b-black w-full flex flex-col items-center justify-center"
         id="issues"
+        style={{zIndex: 5}}
       >
         <Image
           src={"/boostract.png"}
@@ -176,7 +170,6 @@ export default function Landing() {
           className="absolute left-[-140px] top-[-100px] md:left-[-80px] md:top-[-70px] z-[-1]"
           style={{ animation: "float-subtle 3s ease-in-out infinite" }}
         />
-        <DotPattern className="z-[-2]" />
         <h1 className={`text-[40px] md:text-[50px] ${reckless.className} mt-4`}>
           <SparklesText className="font-light">Issues</SparklesText>
         </h1>
@@ -399,12 +392,6 @@ export default function Landing() {
       </section>
       <Submission />
       <Workshops />
-      <section className="relative min-h-100 border-1 border-b-black p-8 flex flex-col">
-        <h2 className={`${piu.className} text-[30px] font-black tracking-wide`}>
-          RUNNING NOW
-        </h2>
-        <div className="min-h-70 flex mt-4 gap-6"></div>
-      </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
