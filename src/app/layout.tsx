@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/v3/Navbar";
 // import Navbar from "@/components/Navbar";
 import Footer from "@/components/v3/Footer";
+import Preloader from "@/components/v3/Preloader";
 
 const f = Geist({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${f.className} antialiased`}>
+        <Preloader />
         <Navbar />
 
         {children}
