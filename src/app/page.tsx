@@ -4,6 +4,7 @@ import { AnimatedGridPattern } from "@/components/v3/Griddler";
 import { cn } from "@/lib/utils";
 import { Highlighter } from "@/components/v3/Highlighter";
 import Microscope from "@/components/v3/3D1";
+import Link from "next/link"
 import {
   BookOpenCheck,
   Calendar,
@@ -69,16 +70,18 @@ export default function Landing() {
           />
         </div>
         <div className="mt-[20px] gap-[10px] flex items-center">
-          <button
-            className={`${readex_pro.className} border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px] transition-all hover:bg-white hover:text-black`}
+          <a
+            href={"#subscribe"}
+            className={`${readex_pro.className} text-center border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px] transition-all hover:bg-white hover:text-black`}
           >
             Subscribe
-          </button>
-          <button
-            className={`${readex_pro.className} cursor-pointer bg-white p-4 text-black rounded-[10px] w-[148px] border-black border-1`}
+          </a>
+          <a
+            href="#about"
+            className={`${readex_pro.className} text-center cursor-pointer bg-white p-4 text-black rounded-[10px] w-[148px] border-black border-1`}
           >
             Learn More
-          </button>
+          </a>
         </div>
       </section>
       <section
@@ -392,7 +395,7 @@ export default function Landing() {
       </section>
       <Submission />
       <Workshops />
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black" id="subscribe">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <BlurFade className={`space-y-4 ${reckless.className}`}>
