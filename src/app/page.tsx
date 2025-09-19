@@ -81,7 +81,7 @@ export default function Landing() {
             href="#about"
             className={`${readex_pro.className} text-center cursor-pointer bg-white p-4 text-black rounded-[10px] w-[148px] border-black border-1`}
           >
-            Learn More
+            About Us
           </a>
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function Landing() {
         >
           Issues are rolled out every{" "}
           <Highlighter action="underline" color="#2832eb">
-            month
+            six months
           </Highlighter>
           , usually the first Sunday. Don't miss out!
         </p>

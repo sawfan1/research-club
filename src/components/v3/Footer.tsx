@@ -1,4 +1,5 @@
 import { Red_Hat_Display, Readex_Pro } from "next/font/google";
+import Link from "next/link";
 
 const red_hat = Red_Hat_Display({
   subsets: ["latin"],
@@ -17,6 +18,16 @@ export default function Footer() {
             <h1 className={`${red_hat.className} font-black text-[18px]`}>
               SD RESEARCH CLUB
             </h1>
+            <h2 className={`${red.className} text-[10px]`}>
+              Made with 🖤 by{" "}
+              <Link
+                href={"https://www.instagram.com/sawfan00/"}
+                className="underline"
+              >
+                this guy
+              </Link>{" "}
+              using NextJS v15
+            </h2>
           </div>
           <p className={`text-sm text-muted-foreground ${red.className}`}>
             ©2025 Sunnydale Research Club. All rights reserved.

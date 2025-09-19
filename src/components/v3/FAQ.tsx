@@ -30,14 +30,14 @@ const faq = [
       "No, unfortunately for the time being, we are only accepting submissions from within Sunnydale. The same goes for the peer review option.",
   },
   {
-    question: "How long does it take for a paper to be reviewed?",
+    question: "What are the fields of research available in your club?",
     answer:
-      "Papers are usually checked and returned with 2 weeks. However, sometimes it might take longer if the intake volume is large so be patient as we will get back to you.",
+      "We accept research papers from a wide variety of fields, including but not limited to: Science, Technology, Engineering, Mathematics, Social Sciences, and Humanities.",
   },
   {
-    question: "Do I have to pay for a second peer review?",
+    question: "When do I submit my research paper and can the club help me?",
     answer:
-      "Although the first peer review is free, we do charge a small amount for additional papers.",
+      "You can submit research papers all year round, but make sure the topic is appropriate. If you are from Sunnydale, the club will help you in your research endeavor.",
   },
 ];
 
