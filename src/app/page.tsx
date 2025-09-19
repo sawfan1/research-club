@@ -4,7 +4,7 @@ import { AnimatedGridPattern } from "@/components/v3/Griddler";
 import { cn } from "@/lib/utils";
 import { Highlighter } from "@/components/v3/Highlighter";
 import Microscope from "@/components/v3/3D1";
-import Link from "next/link"
+import Link from "next/link";
 import {
   BookOpenCheck,
   Calendar,
@@ -34,6 +34,7 @@ import { anon, montserrat, piu, readex_pro, reckless } from "@/lib/ufl";
 import Submission from "@/components/v3/sections/Submission";
 import Workshops from "@/components/v3/sections/Workshops";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Form from "@/components/v3/Form";
 
 export default function Landing() {
   return (
@@ -163,7 +164,7 @@ export default function Landing() {
       <section
         className="overflow-hidden dotted-background min-h-[750px] relative border-1 border-b-black w-full flex flex-col items-center justify-center"
         id="issues"
-        style={{zIndex: 5}}
+        style={{ zIndex: 5 }}
       >
         <Image
           src={"/boostract.png"}
@@ -395,7 +396,10 @@ export default function Landing() {
       </section>
       <Submission />
       <Workshops />
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black" id="subscribe">
+      <section
+        className="w-full py-12 md:py-24 lg:py-32 bg-white text-black border-1 border-b-black"
+        id="subscribe"
+      >
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <BlurFade className={`space-y-4 ${reckless.className}`}>
@@ -409,19 +413,7 @@ export default function Landing() {
               </p>
             </BlurFade>
             <BlurFade className="w-full max-w-md space-y-4">
-              <form className="flex flex-col sm:flex-row gap-2">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="max-w-lg flex-1 bg-gray-100 border-gray-300 text-black placeholder:text-gray-500 focus:ring-black"
-                />
-                <Button
-                  type="submit"
-                  className="bg-blue-700 hover:bg-blue-800 ml-2 text-white"
-                >
-                  Subscribe
-                </Button>
-              </form>
+              <Form />
               <p className="text-sm text-gray-600">
                 We care about your data. Read our <u>privacy policy</u>.
               </p>

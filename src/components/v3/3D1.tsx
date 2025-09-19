@@ -61,7 +61,7 @@ export default function Microscope() {
     >
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <GLBModel url="/better.glb" showWireframe={false} />
+      <GLBModel url="/better.glb" showWireframe={true} />
       <OrbitControls enableRotate enableZoom />
     </Canvas>
   );

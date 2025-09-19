@@ -117,9 +117,28 @@ export default function Faculty() {
 					</div>
 					<div className="h-[400px] w-[400px] bg-black"></div>
 
-					<div className="h-[400px] w-[400px] bg-black"></div>
+					<div className="h-[400px] w-[400px] bg-gray-900 rounded-lg overflow-hidden border-1 border-white">
+						<div className="bg-muted h-4/5 w-[full] relative border-b border-white border-1">
+							<Image
+								src={"/faculty/odrita.jpg"}
+								fill
+								alt="Head"
+								className="object-cover"
+							/>
+						</div>
+						<h2
+							className={`text-white text-center text-xl font-semibold mt-2 mb-1 ${piu.className}`}
+						>
+							Odrita Ahmed
+						</h2>
+						<p
+							className={`text-center text-white/80 text-sm font-semibold ${piu.className}`}
+						>
+							Research Director
+						</p>
+					</div>
 				</Marquee>
-				<Marquee reverse pauseOnHover className="[--duration:20s]">
+				<Marquee reverse pauseOnHover className="[--duration:20s] mt-4">
 					<div className="h-[400px] w-[400px] bg-black"></div>
 					<div className="h-[400px] w-[400px] bg-black"></div>
 
