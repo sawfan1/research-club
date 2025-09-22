@@ -68,6 +68,26 @@ export default function Faculty() {
             </p>
           </div>
         </div>
+        <div className="w-[300px] h-[367px] bg-gray-900 rounded-[12px] relative border-1 border-white glow overflow-hidden">
+          <Image
+            src={"/faculty/sumehra.png"}
+            fill
+            alt="President"
+            className="rounded-[12px] object-cover"
+          />
+          <div className="absolute bottom-0 left-0 p-6 text-center">
+            <h2
+              className={`text-white text-xl font-semibold mb-1 ${piu.className}`}
+            >
+              Sumehra Zafreen
+            </h2>
+            <p
+              className={`text-white/80 text-sm font-semibold ${piu.className}`}
+            >
+              General Secretary
+            </p>
+          </div>
+        </div>
       </div>
       <h3
         className={`text-[30px] md:text-[38px] ${skiff.className} text-center tracking-tight mb-6 mt-10`}
@@ -121,25 +141,34 @@ export default function Faculty() {
       >
         Design & Media Team
       </h3>
-      <div className="mt-2 px-8">
-        <Marquee className="[--duration:20s]">
-          <Member
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-6 ">
+        <Member
             name="Intisar Arham Ahmed"
-            designation="Head of Photographer"
+            designation="Head Photographer"
             imageUrl="/faculty/intisar.jpg"
           />
           <Member
-            name="Khondoker Sayan Jaman"
+            name="Khandoker Sayan Ahmed"
             designation="Head of Graphics"
             imageUrl="/faculty/shayan.png"
           />
-          
-          <Member
-            name="Safwan Ibn Nahid"
-            designation="Head of IT"
-            imageUrl="/faculty/safwan.jpg"
+      </div>
+      <h3
+        className={`text-[30px] md:text-[38px] ${skiff.className} text-center tracking-tight mb-6 mt-10`}
+      >
+        Logistics
+      </h3>
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-6 ">
+        <Member
+            name="Atef Hassan"
+            designation="Treasurer"
+            imageUrl="/faculty/atef.jpg"
           />
-        </Marquee>
+          <Member
+            name="Wasi Chowdhury"
+            designation="Admin"
+            imageUrl="/faculty/wasi.jpg"
+          />
       </div>
     </section>
   );
