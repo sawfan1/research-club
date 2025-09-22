@@ -6,7 +6,7 @@ import Ribbons from "@/components/bits/ribbons";
 
 export default function Faculty() {
   return (
-    <section className="min-h-[700px] relative text-white px-10 md:px-20 lg:px-30 py-10 bg-gradient-to-t from-gray-900 to-slate-800 pt-45">
+    <section className="pb-20 min-h-[700px] relative text-white px-10 md:px-20 lg:px-30 py-10 bg-gradient-to-t from-gray-900 to-slate-800 pt-35">
       <div className="h-[100%] w-[100%] absolute z-10 top-0 left-0">
         <Ribbons
           baseThickness={30}
@@ -72,42 +72,73 @@ export default function Faculty() {
       <h3
         className={`text-[30px] md:text-[38px] ${skiff.className} text-center tracking-tight mb-6 mt-10`}
       >
-        Sector Heads
+        Academic & Research Wing
       </h3>
       <div className="mt-2 px-8">
         <Marquee className="[--duration:20s]">
           <Member
             name="Rashmin Zarah Ahmed"
-            designation="Head of MathxScience"
+            designation="Head of Science"
             imageUrl="/faculty/rashmin.jpg"
           />
-          <Member
-            name="Tazriyan Ahmed"
-            designation="Head of Survey"
-            imageUrl="/faculty/tazriyan.jpg"
-          />
-          <Member
-            name="Intisar Arham"
-            designation="Head of Survey"
-            imageUrl="/faculty/intisar.jpg"
-          />
-          <Member
-            name="Odrita Ahmed"
-            designation="Research Director"
-            imageUrl="/faculty/odrita.jpg"
-          />
-        </Marquee>
-        <Marquee reverse className="[--duration:20s] mt-4">
           <Member
             name="Saadman Muntasir"
             designation="Director of Math"
             imageUrl="/faculty/saadman.png"
           />
-          <div className="h-[400px] w-[400px] bg-black"></div>
-
-          <div className="h-[400px] w-[400px] bg-black"></div>
-          <div className="h-[400px] w-[400px] bg-black"></div>
-          <div className="h-[400px] w-[400px] bg-black"></div>
+          
+          <Member
+            name="Odrita Ahmed"
+            designation="Research Director"
+            imageUrl="/faculty/odrita.jpg"
+          />
+          <Member
+            name="Nameera Tasnim"
+            designation="Director of Social Science"
+            imageUrl="/faculty/nameera.png"
+          />
+        </Marquee>
+        <Marquee reverse className="[--duration:20s] mt-4">
+          <Member
+            name="Taneel Ahmed"
+            designation="Head of Survey"
+            imageUrl="/faculty/taneel.png"
+          />
+          <Member
+            name="Nehla Zohaira Khandoker"
+            designation="Head of Tech"
+            imageUrl="/faculty/nehla.png"
+          />
+          <Member
+            name="Isaam Wafidur Rahman"
+            designation="Research Director"
+            imageUrl="/faculty/isaam.png"
+          />
+        </Marquee>
+      </div>
+      <h3
+        className={`text-[30px] md:text-[38px] ${skiff.className} text-center tracking-tight mb-6 mt-10`}
+      >
+        Design & Media Team
+      </h3>
+      <div className="mt-2 px-8">
+        <Marquee className="[--duration:20s]">
+          <Member
+            name="Intisar Arham Ahmed"
+            designation="Head of Photographer"
+            imageUrl="/faculty/intisar.jpg"
+          />
+          <Member
+            name="Khondoker Sayan Jaman"
+            designation="Head of Graphics"
+            imageUrl="/faculty/shayan.png"
+          />
+          
+          <Member
+            name="Safwan Ibn Nahid"
+            designation="Head of IT"
+            imageUrl="/faculty/safwan.jpg"
+          />
         </Marquee>
       </div>
     </section>

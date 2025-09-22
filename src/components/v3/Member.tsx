@@ -12,8 +12,8 @@ interface MemberProps {
 export default function Member({ name, designation, imageUrl }: MemberProps) {
   return (
     <div className="h-[400px] w-[400px] bg-gray-900 rounded-lg overflow-hidden border-1 border-white">
-      <div className="bg-muted h-4/5 w-[full] relative border-b border-white border-1">
-        <Image src={imageUrl} fill alt="Head" className="object-cover" />
+      <div className="bg-gray-900 h-4/5 w-[full] relative border-b border-white border-1">
+        <Image src={imageUrl} fill alt=" " className="object-cover" />
       </div>
       <h2
         className={`text-white text-center text-xl font-semibold mt-2 mb-1 ${piu.className}`}
