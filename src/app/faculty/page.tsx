@@ -2,21 +2,13 @@ import { piu, skiff, instrument } from "@/lib/ufl";
 import { Marquee } from "@/components/magicui/marquee";
 import Image from "next/image";
 import Member from "@/components/v3/Member";
-import Ribbons from "@/components/bits/ribbons";
+import { SmoothCursor } from "@/components/magicui/smooth-cursor";
 
 export default function Faculty() {
   return (
     <section className="pb-20 min-h-[700px] relative text-white px-10 md:px-20 lg:px-30 py-10 bg-gradient-to-t from-gray-900 to-slate-800 pt-35">
-      <div className="h-[100%] w-[100%] absolute z-10 top-0 left-0">
-        <Ribbons
-          baseThickness={30}
-          colors={["#ffffff"]}
-          speedMultiplier={0.5}
-          maxAge={500}
-          enableFade={false}
-          enableShaderEffect={true}
-        />
-      </div>
+      <SmoothCursor />
+      <div className="h-[100%] w-[100%] absolute z-10 top-0 left-0"></div>
       <h2
         className={`text-[40px] md:text-[44px] ${instrument.className} text-center tracking-tight`}
       >
@@ -95,7 +87,7 @@ export default function Faculty() {
         Academic & Research Wing
       </h3>
       <div className="mt-2 px-8">
-        <Marquee className="[--duration:20s]">
+        <Marquee pauseOnHover className="[--duration:20s]">
           <Member
             name="Rashmin Zarah Ahmed"
             designation="Head of Science"
@@ -106,7 +98,7 @@ export default function Faculty() {
             designation="Director of Math"
             imageUrl="/faculty/saadman.png"
           />
-          
+
           <Member
             name="Odrita Ahmed"
             designation="Research Director"
@@ -118,7 +110,7 @@ export default function Faculty() {
             imageUrl="/faculty/nameera.png"
           />
         </Marquee>
-        <Marquee reverse className="[--duration:20s] mt-4">
+        <Marquee pauseOnHover reverse className="[--duration:20s] mt-4">
           <Member
             name="Taneel Ahmed"
             designation="Head of Survey"
@@ -143,15 +135,15 @@ export default function Faculty() {
       </h3>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-6 ">
         <Member
-            name="Intisar Arham Ahmed"
-            designation="Head Photographer"
-            imageUrl="/faculty/intisar.jpg"
-          />
-          <Member
-            name="Khandoker Sayan Ahmed"
-            designation="Head of Graphics"
-            imageUrl="/faculty/shayan.png"
-          />
+          name="Intisar Arham Ahmed"
+          designation="Head Photographer"
+          imageUrl="/faculty/intisar.jpg"
+        />
+        <Member
+          name="Khandoker Sayan Ahmed"
+          designation="Head of Graphics"
+          imageUrl="/faculty/shayan.png"
+        />
       </div>
       <h3
         className={`text-[30px] md:text-[38px] ${skiff.className} text-center tracking-tight mb-6 mt-10`}
@@ -160,15 +152,15 @@ export default function Faculty() {
       </h3>
       <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mt-6 ">
         <Member
-            name="Atef Hassan"
-            designation="Treasurer"
-            imageUrl="/faculty/atef.jpg"
-          />
-          <Member
-            name="Wasi Chowdhury"
-            designation="Admin"
-            imageUrl="/faculty/wasi.jpg"
-          />
+          name="Atef Hassan"
+          designation="Treasurer"
+          imageUrl="/faculty/atef.jpg"
+        />
+        <Member
+          name="Wasi Chowdhury"
+          designation="Admin"
+          imageUrl="/faculty/wasi.jpg"
+        />
       </div>
     </section>
   );
