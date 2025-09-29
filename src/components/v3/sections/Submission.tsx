@@ -23,12 +23,18 @@ export default function Submission() {
         >
           Submission
         </TextAnimate>
-        <TextAnimate
-          className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px]`}
+        <BlurFade
+          className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] my-3`}
         >
-          Head down the following link and complete the form. After completion,
-          check your email for further instructions.
-        </TextAnimate>
+          We take <b>five</b> forms of submissions:
+          <ol>
+            <li>1. Original Research Paper</li>
+            <li>2. Literature Review</li>
+            <li>3. Research Proposal</li>
+            <li>4. Poster Presentation</li>
+            <li>5. Design / Prototype</li>
+          </ol>
+        </BlurFade>
         <BlurFade className="flex h-[150px] max-w-100 min-w-80 bg-blue0-50 mt-4 rounded-xl overflow-hidden outline-1 outline-black">
           <div
             className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
@@ -40,7 +46,7 @@ export default function Submission() {
             className={`${readex_pro.className} border-r-black border-1 text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}
           >
             <SearchCheck size={30} />
-            Verify information
+            Check formatting
           </div>
           <div
             className={`${readex_pro.className} text-center gap-3 p-6 w-1/3 h-full bg-indigo-200 inline-flex flex-col items-center justify-center text-sm`}

@@ -24,9 +24,8 @@ export default function Workshops() {
         <TextAnimate
           className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-3`}
         >
-          Workshops are held monthly, usually offline and on school campus. They
-          help you discover your passion for research topics as well as hone
-          your skills.
+          Workshops are held frequently, usually online. They help you discover
+          your passion for research topics as well as hone your skills.
         </TextAnimate>
 
         <TextAnimate
@@ -35,6 +34,13 @@ export default function Workshops() {
           Expert mentors hold classes on topics ranging from research integrity,
           formatting and referencing in 1 hour subclasses for the convenience of
           students.
+        </TextAnimate>
+        <TextAnimate
+          className={`text-center max-w-[55ch] ${readex_pro.className} text-[14px] mt-6`}
+        >
+          Workshops as of yet are for club members only. However, subscribe to
+          our journal for free to receive updates and get a chance to join these
+          exclusive workshops taken by professionals.
         </TextAnimate>
       </div>
       <div className="w-full md:w-1/2 h-full hidden md:flex flex-col items-center justify-center p-8">

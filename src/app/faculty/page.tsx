@@ -101,7 +101,7 @@ export default function Faculty() {
 
           <Member
             name="Odrita Ahmed"
-            designation="Research Director"
+            designation="Head of Academics"
             imageUrl="/faculty/odrita.jpg"
           />
           <Member

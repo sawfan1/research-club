@@ -21,13 +21,13 @@ const faq = [
   {
     question: "Is Sunnydale Research Club open to recruiting?",
     answer:
-      "No, recruitments are currently closed but keep an eye on our socials for further notice.",
+      "Yes, recruitments are currently open. Head down here to apply https://forms.gle/4ZUhwQ5g4eVxkd4F8",
   },
   {
     question:
       "Can students outside of Sunnydale submit papers or avail peer review?",
     answer:
-      "No, unfortunately for the time being, we are only accepting submissions from within Sunnydale. The same goes for the peer review option.",
+      "Yes, non-club/school members can also submit their research papers and get it peer reviewed for free.",
   },
   {
     question: "What are the fields of research available in your club?",

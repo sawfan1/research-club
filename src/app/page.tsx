@@ -16,6 +16,8 @@ import {
   PencilLine,
   Phone,
   SearchCheck,
+  CornerRightUp,
+  CornerLeftUp,
 } from "lucide-react";
 import { SparklesText } from "@/components/v3/SparklesText";
 import BackToTopButton from "@/components/v3/BackToTop";
@@ -71,9 +73,13 @@ export default function Landing() {
         <div className="mt-[20px] gap-[10px] flex items-center">
           <a
             href={"#subscribe"}
-            className={`${readex_pro.className} text-center border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px] transition-all hover:bg-white hover:text-black`}
+            className={`${readex_pro.className} relative text-center border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px] transition-all hover:bg-white hover:text-black`}
           >
             Subscribe
+            <p className="absolute bottom-[-35px] text-black font-light min-w-[50px]">
+              <CornerLeftUp className="inline" size={14} /> for free!{" "}
+              <CornerRightUp className="inline" size={14} />
+            </p>
           </a>
           <a
             href="#about"
@@ -180,7 +186,7 @@ export default function Landing() {
         >
           Issues are rolled out every{" "}
           <Highlighter action="underline" color="#2832eb">
-            six months
+            two months
           </Highlighter>
           , usually the first Sunday. Don't miss out!
         </p>
@@ -230,9 +236,9 @@ export default function Landing() {
               alt=""
               className="mt-[40px]"
             />
-            <div className="w-full pl-[80px] h-full">
+            <div className="w-full pl-[40px] md:pl-[80px] h-full ">
               <BlurFade
-                className={`text-[50px] ${reckless.className} flex items-center gap-3`}
+                className={`text-[40px] md:text-[50px] ${reckless.className} flex items-center gap-3 mx-1`}
               >
                 <PencilLine size={40} className="translate-y-1" />
                 Peer Review
@@ -244,10 +250,10 @@ export default function Landing() {
                 <span className="mx-1 bg-[#AAB9FF] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
                   FREE
                 </span>
-                <span className="mx-1 bg-[#FFE0C5] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
+                <span className="hidden md:inline-flex mx-1 bg-[#FFE0C5] px-4 h-[28px] items-center outline-1 outline-black rounded-[30px] text-[16px]">
                   STANDARD
                 </span>
-                <span className="mx-1 bg-[#5EFFDA] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
+                <span className="hidden md:inline-flex mx-1 bg-[#5EFFDA] px-4 h-[28px] items-center outline-1 outline-black rounded-[30px] text-[16px]">
                   20 PAGE
                 </span>
                 <br></br>peer review devoid of charge.
@@ -258,9 +264,6 @@ export default function Landing() {
               >
                 Avail Now!
               </button>
-              <p className={`${anon.className} mt-4`}>
-                <u>Terms and conditions</u> apply, of course!
-              </p>
             </div>
           </div>
           <div className="w-full flex flex-col items-center justify-center p-8 gap-[25px] dashed-bg">
@@ -356,7 +359,7 @@ export default function Landing() {
         className="relative border-1 border-b-black w-full barbed"
       >
         <div className="w-full flex items-center justify-around p-8">
-          <div className="w-[450px] h-[450px] bg-black flex flex-col items-center justify-baseline p-1">
+          <div className="w-[450px] h-[450px] bg-black flex flex-col items-center justify-baseline p-1 pb-4">
             <div className="w-full h-5/10 bg-gray-200 relative">
               <Image
                 src={"/matrix.jpg"}
