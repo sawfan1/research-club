@@ -307,7 +307,7 @@ export default function Landing() {
                 width={250}
                 height={240}
                 alt=""
-                className="absolute right-[-55px] top-[-150px] z-1"
+                className="absolute right-[-55px] top-[-150px] z-1 hidden lg:block"
               />
               <h3
                 className={`text-[35px] ${reckless.className} mb-4 text-center z-2`}
@@ -359,8 +359,9 @@ export default function Landing() {
         className="relative border-1 border-b-black w-full barbed"
       >
         <div className="w-full flex items-center justify-around p-8">
-          <div className="w-[450px] h-[450px] bg-black flex flex-col items-center justify-baseline p-1 pb-4">
-            <div className="w-full h-5/10 bg-gray-200 relative">
+          <div className="w-[450px] h-[450px] bg-black border-white border-1 flex  flex-col items-center justify-center p-1 pb-4">
+            <h2 className="text-white">Sorry, no events available now :(</h2>
+            {/* <div className="w-full h-5/10 bg-gray-200 relative">
               <Image
                 src={"/matrix.jpg"}
                 fill
@@ -398,7 +399,7 @@ export default function Landing() {
               >
                 Share
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
