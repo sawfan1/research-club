@@ -118,7 +118,7 @@ export default function Faculty() {
           />
           <Member
             name="Nehla Zohaira Khandoker"
-            designation="Head of Tech"
+            designation="Director of Tech"
             imageUrl="/faculty/nehla.png"
           />
           <Member

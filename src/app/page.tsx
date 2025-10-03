@@ -35,6 +35,7 @@ import Submission from "@/components/v3/sections/Submission";
 import Workshops from "@/components/v3/sections/Workshops";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Form from "@/components/v3/Form";
+import PeerButton from "@/components/v3/PeerButton";
 
 export default function Landing() {
   return (
@@ -259,11 +260,7 @@ export default function Landing() {
                 <br></br>peer review devoid of charge.
               </BlurFade>
 
-              <button
-                className={`${readex_pro.className} mt-8 border-1 border-black cursor-pointer bg-black p-4 text-white rounded-[10px] w-[148px]`}
-              >
-                Avail Now!
-              </button>
+              <PeerButton />
             </div>
           </div>
           <div className="w-full flex flex-col items-center justify-center p-8 gap-[25px] dashed-bg">
@@ -456,7 +453,9 @@ export default function Landing() {
                       Email
                     </h3>
                     <p className="text-foreground font-medium">
-                      sdresearchclub@gmail.com
+                      sdresearchclub
+                      <br className="block md:hidden" />
+                      @gmail.com
                     </p>
                   </div>
                 </div>
