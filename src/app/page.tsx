@@ -497,9 +497,7 @@ export default function Landing() {
                     <h3 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
                       Phone
                     </h3>
-                    <p className="text-foreground font-medium">
-                      +1 (555) 123-4567
-                    </p>
+                    <p className="text-foreground font-medium">01919669565</p>
                   </div>
                 </div>
               </Card>
