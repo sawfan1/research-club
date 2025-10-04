@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/v3/Navbar";
 // import Navbar from "@/components/Navbar";
 import Footer from "@/components/v3/Footer";
+import { Analytics } from "@vercel/analytics/next";
 import Preloader from "@/components/v3/Preloader";
 
 const f = Geist({
@@ -28,6 +29,7 @@ export default function RootLayout({
 
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

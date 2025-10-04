@@ -192,7 +192,15 @@ export default function Landing() {
           , usually the first Sunday. Don't miss out!
         </p>
         <div className="mt-6 flex gap-[20px]">
-          <div className="hidden lg:block">
+          <div className="min-w-[400px] max-w-[450px] h-[450px] bg-white border-black border-1 flex rounded-lg flex-col items-center justify-center p-1 pb-4">
+            <h2 className={`${readex_pro.className} text-black`}>
+              No issues published yet
+            </h2>
+            <h2 className={`${readex_pro.className} text-black`}>
+              Check back later
+            </h2>
+          </div>
+          {/* <div className="hidden lg:block">
             <Issue
               date="September, 2025"
               title="HYPERBOLIC TIME DILATION"
@@ -220,9 +228,9 @@ export default function Landing() {
             numberOfPapers={65}
             backgroundImageUrl="/issues/code.png"
             paddle="#C2E1FF"
-          />
+          /> */}
         </div>
-        <Hower>See All Past Issues</Hower>
+        {/* <Hower>See All Past Issues</Hower> */}
       </section>
       <section
         className="relative flex min-h-[700px] border-1 bg-[#A2D8FF] border-b-black p-[20px]"
@@ -241,11 +249,14 @@ export default function Landing() {
               <BlurFade
                 className={`text-[40px] md:text-[50px] ${reckless.className} flex items-center gap-3 mx-1`}
               >
-                <PencilLine size={40} className="translate-y-1" />
+                <PencilLine
+                  size={40}
+                  className="translate-y-1 hidden md:block"
+                />
                 Peer Review
               </BlurFade>
               <BlurFade
-                className={`text-[22px] ${readex_pro.className} antialiased font-regular leading-10`}
+                className={`text-[18px] md:text-[22px] ${readex_pro.className} antialiased font-regular leading-10`}
               >
                 We offer one (1x){" "}
                 <span className="mx-1 bg-[#AAB9FF] px-4 h-[28px] inline-flex items-center outline-1 outline-black rounded-[30px] text-[16px]">
@@ -272,7 +283,7 @@ export default function Landing() {
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#A2D8FF] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="w-[32px] h-[32px] bg-[#A2D8FF] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
                     1
                   </div>
                   <span className={`${readex_pro.className} text-[16px] ml-2`}>
@@ -280,7 +291,7 @@ export default function Landing() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#ffd7a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="w-[32px] h-[32px] bg-[#ffd7a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
                     2
                   </div>
                   <span className={`${readex_pro.className} text-[16px] ml-2`}>
@@ -288,7 +299,7 @@ export default function Landing() {
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-[#ffa5a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="w-[32px] h-[32px] bg-[#ffa5a2] outline-1 outline-black rounded-full flex items-center justify-center text-sm font-bold">
                     3
                   </div>
                   <span className={`${readex_pro.className} text-[16px] ml-2`}>
@@ -314,7 +325,7 @@ export default function Landing() {
               <div className="space-y-4 z-2">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                    className={`bg-black text-white w-[32px] h-[32px] outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
                   >
                     I
                   </div>
@@ -324,7 +335,7 @@ export default function Landing() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div
-                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                    className={`bg-black text-white w-[32px] h-[32px] outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
                   >
                     II
                   </div>
@@ -334,7 +345,7 @@ export default function Landing() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div
-                    className={`bg-black text-white w-8 h-8 outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
+                    className={`bg-black text-white w-[32px] h-[32px] outline-1 outline-black rounded-full flex items-center justify-center text-sm ${anon.className} `}
                   >
                     III
                   </div>

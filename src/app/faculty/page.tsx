@@ -6,7 +6,7 @@ import { SmoothCursor } from "@/components/magicui/smooth-cursor";
 
 export default function Faculty() {
   return (
-    <section className="pb-20 min-h-[700px] relative text-white px-10 md:px-20 lg:px-30 py-10 bg-gradient-to-t from-gray-900 to-slate-800 pt-35">
+    <section className="pb-20 min-h-[700px] relative text-white px-0 md:px-20 lg:px-40 py-10 bg-gradient-to-t from-gray-900 to-slate-800 pt-35">
       <SmoothCursor />
       <div className="h-[100%] w-[100%] absolute z-10 top-0 left-0"></div>
       <h2

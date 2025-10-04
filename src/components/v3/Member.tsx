@@ -11,7 +11,7 @@ interface MemberProps {
 
 export default function Member({ name, designation, imageUrl }: MemberProps) {
   return (
-    <div className="h-[400px] w-[400px] bg-gray-900 rounded-lg overflow-hidden border-1 border-white">
+    <div className="w-[300px] h-[367px] bg-gray-900 rounded-lg overflow-hidden border-1 border-white">
       <div className="bg-gray-900 h-4/5 w-[full] relative border-b border-white border-1">
         <Image src={imageUrl} fill alt=" " className="object-cover" />
       </div>
