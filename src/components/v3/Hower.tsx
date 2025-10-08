@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -25,6 +27,7 @@ export const Hower = React.forwardRef<
         readex_pro.className
       )}
       {...props}
+      onClick={() => window.open("https://docs.google.com/forms/d/12Dn_g5E5VYWW8QnKYL5X_AJgrzxLPxzjKloz7oU1xMQ", "_blank")}
     >
       <div className="flex items-center gap-2">
         <div className="h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover:scale-[100.8]"></div>

@@ -33,6 +33,7 @@ import { Card } from "@/components/ui/card";
 import { anon, montserrat, piu, readex_pro, reckless } from "@/lib/ufl";
 import Submission from "@/components/v3/sections/Submission";
 import Workshops from "@/components/v3/sections/Workshops";
+import Join from "@/components/v3/sections/Join"
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Form from "@/components/v3/Form";
 import PeerButton from "@/components/v3/PeerButton";
@@ -166,8 +167,9 @@ export default function Landing() {
           </div>
         </div>
       </section>
+      {/*<Join />*/}
       <section
-        className="overflow-hidden dotted-background min-h-[750px] relative border-1 border-b-black w-full flex flex-col items-center justify-center"
+        className="overflow-hidden dotted-background min-h-[750px] relative border-1 border-b-black border-t-black w-full flex flex-col items-center justify-center"
         id="issues"
         style={{ zIndex: 5 }}
       >

@@ -8,11 +8,9 @@ export default function PeerButton() {
     const body =
       "Hello,\n\nI would like to request a peer review for my research paper. ... \n (attach your paper or provide a link if applicable))";
 
-    const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `https://docs.google.com/forms/d/12Dn_g5E5VYWW8QnKYL5X_AJgrzxLPxzjKloz7oU1xMQ`;
 
-    window.location.href = mailtoLink;
+    window.open(mailtoLink, '_blank')
   };
   return (
     <button
